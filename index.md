@@ -1,3 +1,3 @@
 ---
+redirect_to: content/0/
 ---
-{% include_relative content/0/index.md %}
