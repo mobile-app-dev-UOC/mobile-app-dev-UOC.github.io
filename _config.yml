@@ -1,1 +1,5 @@
+# Jekyll theme
 remote_theme: just-the-docs/just-the-docs
+
+# just-the-docs theme configuration
+logo: "/images/logo-uoc.png"
