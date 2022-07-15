@@ -14,7 +14,7 @@ This website contains the course materials for a course on "*Mobile app developm
 The course requires some previous knowledge. *Programming* skills are a must (specially in an object-oriented programming language like Java), as well as basic knowledge about *relational databases* (SQL), *web development* (HTML and REST) and *networking*.  Basic notions of *software design patterns* are also a plus.
 
 
-> This course belongs to the [Bachelor's degree in Techniques for Software Application Development](https://studies.uoc.edu/en/bachelors-degrees/software-development/presentation), an official degree offered 100% online and in English by [Universitat Oberta de Catalunya](https://www.uoc.edu/portal/en/index.html).
+> 🎓 This course belongs to the [Bachelor's degree in Techniques for Software Application Development](https://studies.uoc.edu/en/bachelors-degrees/software-development/presentation), an official degree offered 100% online and in English by [Universitat Oberta de Catalunya](https://www.uoc.edu/portal/en/index.html).
 
 ## About the authors
 
