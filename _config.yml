@@ -4,3 +4,7 @@ remote_theme: just-the-docs/just-the-docs
 # just-the-docs theme configuration
 logo: "/images/logo-uoc.png"
 exclude: "README.md"
+
+# Google Analytics
+ga_tracking: G-QXR2TD8ZMR
+ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
