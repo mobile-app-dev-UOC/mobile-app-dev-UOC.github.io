@@ -3,7 +3,7 @@ permalink: /
 layout: default
 title: About this document
 nav_order: 0
-site.footer_content:
+site.footer_content: false
 ---
 
 # Mobile app development
