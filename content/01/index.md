@@ -24,9 +24,7 @@ class Element(name: String, value: Int) {
     }
   }
 }
+
+var elem2:Element = Element("cat", Element.ElementsFactory.GetId())
 ```
-
- var elem2:Element = Element("cat", Element.ElementsFactory.GetId())
-![image](https://user-images.githubusercontent.com/8524833/179322713-de5f2750-4217-495e-9302-93ad1503ce55.png)
-
 
