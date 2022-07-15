@@ -1,7 +1,7 @@
 ---
 permalink: /
 layout: default
-title: About these materials
+title: About this document
 nav_order: 0
 ---
 
