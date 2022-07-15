@@ -8,9 +8,9 @@ nav_order: 0
 
 ## About the course
 
-This website contains the course materials for a course on "Mobile app development". Starting from scratch, this course teaches the fundamentals required to create native Android mobile apps using the Kotlin programming language.
+This website contains the course materials for a course on "*Mobile app development*". Starting from scratch, this course teaches the fundamentals required to create **native Android mobile apps** using the **Kotlin** programming language.
 
-The course requires some previous knowledge. Programming skills are a must (specially an object-oriented programming language like Java), as well as basic knowledge about relational databases (SQL), web development (HTML) and networking.  Basic notions in software design patterns are also a plus.
+The course requires some previous knowledge. *Programming* skills are a must (specially in an object-oriented programming language like Java), as well as basic knowledge about *relational databases* (SQL), *web development* (HTML and REST) and *networking*.  Basic notions of *software design patterns* are also a plus.
 
 ## About the degree
 
@@ -23,4 +23,10 @@ These materials have been written by [Javier Salvador Calvo](https://www.linkedi
 The creation of these learning resources has been coordinated by [Robert Clarisó](https://robertclariso.github.io).
 
 ## License
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
+This work is published under a **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License** ([CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)).
+
+
+
 
