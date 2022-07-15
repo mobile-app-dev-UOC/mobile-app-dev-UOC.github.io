@@ -12,5 +12,21 @@ This course presents the fundamentals of mobile application (app) development. B
 
 ## 1.1. Mobile devices
 
+```kotlin
+class Element(name: String, value: Int) {
+
+ companion object ElementsFactory {
+    var counter:Int = 0
+    public fun GetId():Int
+    {
+        counter++
+        return counter
+    }
+  }
+}
+```
+
+ var elem2:Element = Element("cat", Element.ElementsFactory.GetId())
+![image](https://user-images.githubusercontent.com/8524833/179322713-de5f2750-4217-495e-9302-93ad1503ce55.png)
 
 
