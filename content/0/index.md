@@ -18,7 +18,7 @@ This course belongs to the [Bachelor's degree in Techniques for Software Applica
 
 ## About the authors
 
-These materials have been written by [Javier Salvador Calvo] (https://www.linkedin.com/in/revsalva/).
+These materials have been written by [Javier Salvador Calvo](https://www.linkedin.com/in/revsalva/).
 
 The creation of these learning resources has been coordinated by [Robert Clarisó](https://robertclariso.github.io).
 
