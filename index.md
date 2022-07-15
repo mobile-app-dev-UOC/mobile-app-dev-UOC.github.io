@@ -1,3 +1,3 @@
 ---
 ---
-{% include content/0/index.md %}
+{% include_relative content/0/index.md %}
