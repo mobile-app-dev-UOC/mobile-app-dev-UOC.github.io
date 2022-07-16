@@ -5,4 +5,4 @@ parent: 1. Introduction
 nav_order: 1
 ---
 
-# 1. Mobile devices
+# 1.1. Mobile devices
