@@ -19,13 +19,13 @@
 
 {%- if page.title == 'About this document' -%}
     <div class="flex">
-        <div>
+        <div style="float:left;">
         {% if prev_i < 0 %}
         {% else %}
             <a rel="prev"href="{{sorted_pages[prev_i].url}}"><span>Previous section</span></a>                 
         {% endif %}
         </div>
-        <div style="width=100%;">
+        <div style="width=100%; float:left;">
         {% if num_of_pages > next_i %}
             <div>
                 <a rel="next" href="{{ sorted_pages[next_i].url }}"><span>Next section</span></a>
@@ -34,13 +34,13 @@
     </div>
 {%- else -%}
     <div class="flex">
-         <div>
+         <div style="float:left;">
          {% if prev_i < 0 %}
          {% else %}
              <a rel="prev" href="{{sorted_pages[prev_i].url}}"><span>Previous section</span></a>                 
          {% endif %}
          </div>
-         <div style="width=100%;">
+         <div style="width=100%; float:left;">
          <div>
          {% if num_of_pages > next_i %}
              <a rel="next" href="{{ sorted_pages[next_i].url }}"><span>Next section</span></a>
