@@ -3,7 +3,9 @@
 
 {% assign sorted_pages = "" | split: ""  %}
 {% for item in sorted_pages2 %}
-    {% assign sorted_pages = sorted_pages | push: item %}
+   {% unless item.url contains "assets" %} 
+     {% assign sorted_pages = sorted_pages | push: item %}
+   {% endundless %}
 {% endfor %}
 
 {% for item in sorted_pages %}
@@ -18,7 +20,7 @@
 
 
 {%- if page.title == 'About this document' -%}
-    <div class="flex" style="margin-bottom: 10px;">
+    <div class="flex" style="padding-bottom: 10px;">
         <div style="float:left;">
         </div>
         <div style="width=100%; float:left;">&nbsp;</div>
@@ -29,7 +31,7 @@
         {% endif %}
     </div>
 {%- else -%}
-    <div class="flex" style="margin-bottom: 10px;">
+    <div class="flex" style="padding-bottom: 10px;">
          <div style="float:left;">
          {% if prev_i < 0 %}
          {% else %}
