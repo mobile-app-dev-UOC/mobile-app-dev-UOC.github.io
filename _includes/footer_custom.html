@@ -1,5 +1,5 @@
 
-{% assign sorted_pages2 = site.pages %}
+{% assign sorted_pages2 = site.pages | sort: 'order' %}
 
 {% assign sorted_pages = "" | split: ""  %}
 {% for item in sorted_pages2 %}
