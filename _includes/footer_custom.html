@@ -1,3 +1,11 @@
+
+{% assign sorted_pages2 = site.pages %}
+
+{% assign sorted_pages = "" | split: ""  %}
+{% for item in sorted_pages2 %}
+    {% assign sorted_pages = sorted_pages | push: item %}
+{% endfor %}
+
 {% for item in site.pages %}
     {% if item.url == page.url %}
         {% assign this_i = forloop.index0 %}
@@ -12,17 +20,24 @@
 {%- if page.title == 'About this document' -%}
     {% if prev_i < 0 %}
     {% else %}
-                    <a href="{{site.pages[prev_i].url}}"><span>Previous section</span></a>                 
+       <a href="{{sorted_pages[prev_i].url}}"><span>Previous section</span></a>                 
     {% endif %}
-
-
+    {% if num_of_pages > next_i %}
+                <a href="{{ sorted_pages[next_i].url }}">
+                    <span>Next section</span>
+                </a>
+    {% endif %}
 
 {%- else -%}
     {% if prev_i < 0 %}
     {% else %}
-         <a href="{{site.pages[prev_i].url}}"><span>Previous section</span></a>                 
+         <a href="{{sorted_pages[prev_i].url}}"><span>Previous section</span></a>                 
     {% endif %}
-
+    {% if num_of_pages > next_i %}
+                <a href="{{ sorted_pages[next_i].url }}">
+                    <span>Next section</span>
+                </a>
+    {% endif %}
     {%- if page.next -%} 
         <a rel="next" href="{{ page.next.url }}">Continue to next section: {{page.next.title}}</a>
     {%- endif -%}
