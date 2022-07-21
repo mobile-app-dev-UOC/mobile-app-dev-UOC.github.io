@@ -1,10 +1,10 @@
 {%- if page.title == 'About this document' -%}
-    {%- if page.following -%} 
-        <a rel="next" href="{{ page.following }}">Start reading</a>
+    {%- if page.next -%} 
+        <a rel="next" href="{{ page.next }}">Start reading</a>
     {%- endif -%}
 {%- else -%}
-    {%- if page.following -%} 
-        <a rel="next" href="{{ page.following }}">Continue to next section</a>
+    {%- if page.next -%} 
+        <a rel="next" href="{{ page.next }}">Continue to next section</a>
     {%- endif -%}
   <p class="text-small text-grey-dk-100 mb-0">{{ site.footer_content }}</p>
   <table>
