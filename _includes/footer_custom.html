@@ -3,7 +3,7 @@
 
 {% assign sorted_pages = "" | split: ""  %}
 {% for item in sorted_pages2 %}
-   {% unless item.url contains "assets" %} 
+   {% unless item.url contains 'assets' or item.dir contains 'assets' %} 
      {% assign sorted_pages = sorted_pages | push: item %}
    {% endundless %}
 {% endfor %}
