@@ -14,4 +14,4 @@ This course presents the fundamentals of mobile application (app) development. B
 
 {:toc:}
 
-[Start reading]({% link {{ page.next }} %}) 
+[Start reading]({% link /content/01/01-mobile-devices.md %}) 
