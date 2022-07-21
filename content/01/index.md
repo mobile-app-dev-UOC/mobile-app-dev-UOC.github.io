@@ -3,7 +3,7 @@ layout: default
 title: 1. Introduction
 nav_order: 1
 has_children: true
-next: /content/01/01-mobile-devices.md
+next: /content/01/01-mobile-devices
 ---
 
 {:toc:}
@@ -14,4 +14,6 @@ This course presents the fundamentals of mobile application (app) development. B
 
 {:toc:}
 
-[Start reading](01-mobile-devices.md) 
+[Start reading](01-mobile-devices)
+[Start reading 2]({% link {{ page.next }} %})
+[Start reading 2]({% link page.next %})
