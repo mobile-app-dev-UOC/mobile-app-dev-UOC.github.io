@@ -3,9 +3,9 @@
 
 {% assign sorted_pages = "" | split: ""  %}
 {% for item in sorted_pages2 %}
-    URL: {{ item.url  }}
-    DIR: {{ item.dir }}
-     {% assign sorted_pages = sorted_pages | push: item %}
+     {% if (item.url contains "assets") == false %}
+       {% assign sorted_pages = sorted_pages | push: item %}
+      {% endif %}  
 {% endfor %}
 
 {% for item in sorted_pages %}
