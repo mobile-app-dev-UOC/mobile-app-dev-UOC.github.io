@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 7.2. Methods as params
-parent: 7. Advanced Kotlin Features
+parent: 7. Advanced Kotlin features
 nav_order: 2
 ---
 

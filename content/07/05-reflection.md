@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 7.5. Reflection
-parent: 7. Advanced Kotlin Features
+parent: 7. Advanced Kotlin features
 nav_order: 5
 ---
 
