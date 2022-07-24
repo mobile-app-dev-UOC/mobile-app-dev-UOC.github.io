@@ -1,8 +1,8 @@
 ---
 layout: default
-title: 5.1. Units
+title: 5.2. Basic components
 parent: 5. User interfaces
-nav_order: 1
+nav_order: 2
 ---
 
-# 5.1. Units 
+# 5.2. Basic components 
