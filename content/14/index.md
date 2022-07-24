@@ -5,6 +5,6 @@ nav_order: 14
 has_children: true
 ---
 
-# 14. Geolocation
+# 14. Geolocation and maps
 
 {:toc:}
