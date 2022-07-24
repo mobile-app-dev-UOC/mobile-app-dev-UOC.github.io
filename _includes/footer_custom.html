@@ -3,11 +3,11 @@
 
 {% assign sorted_pages = "" | split: ""  %}
 {% for item in sorted_pages2 %}
-     DIR2: {{item.dir}}
-     {% if (item.dir contains "assets") == false  %}
+     DIR3: {{item.dir}}
+     {% unless item.dir contains "assets"  %}
        Pushing {{item.dir}}
        {% assign sorted_pages = sorted_pages | push: item %}
-      {% endif %}  
+      {% endunless %}  
 {% endfor %}
 
 {% for item in sorted_pages %}
