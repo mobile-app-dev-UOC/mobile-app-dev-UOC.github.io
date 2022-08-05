@@ -113,10 +113,10 @@ Mobile devices have increased the quality of their sound systems by including va
 Many devices have physical buttons that give us quick access to premium features such as the Android “back” button, speaker volume modification, or the “return to home” screen button. Moreover, some smart watches feature a physical auxiliary button. An example is the Digital Crown of the Apple Watch that allows you to return to the main screen, zoom on the screen, etc.
 
 
-![Physical buttons][/images/01/button.jpg]
+![Physical buttons. Source: https://upload.wikimedia.org/wikipedia/commons/7/7c/Apple_Watch_Series_4_Extract.png
+ (Janothan Parker)](/images/01/button.jpg)
 
-
-Smart glasses usually have physical buttons on the side for input management. These buttons allow you to move through menus, zoom, etc.
+Smart glasses usually have physical buttons on the side for input management. These buttons allow you to move through menus, zoom, ...
 
 Devices without physical buttons perform the above operations using gestures on the screen.
 
