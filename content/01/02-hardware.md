@@ -114,7 +114,7 @@ Many devices have physical buttons that give us quick access to premium features
 
 
 ![Physical buttons in a smart watch](/images/01/button.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
-Example of physical buttons in a smart watch. Source: https://upload.wikimedia.org/wikipedia/commons/7/7c/Apple_Watch_Series_4_Extract.png (Janothan Parker)
+*Example of physical buttons in an Apple 4 Watch Series 4 smart watch*. Source: [Janothan Parker @ Wikimedia](https://commons.wikimedia.org/wiki/File:Apple_Watch_Series_4_Extract.png). License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
 Smart glasses usually have physical buttons on the side for input management. These buttons allow you to move through menus, zoom, ...
 
