@@ -28,6 +28,42 @@ It is very likely that our app will run on different devices with very different
 
 While devices have an ever-increasing battery life, some hardware features are extremely battery-hungry. For example, apps that use GPS or Bluetooth intensively can drain a battery very quickly. 
 
+## Local storage
+
+We need to determine the amount of storage that our app will need and compare it to the capacity available on our target devices. It is also interesting to determine the level of security of the local file system, in case sensitive information needs to be stored locally.
+
+##	Sound
+
+Mobile devices have increased the quality of their sound systems by including variants such as Dolby Atmos. Dolby Atmos allows you to hear three-dimensional surround sound. To achieve this effect on mobile phones, the two speakers on the phone are usually used next to the two headphones.
+
+## Physical buttons
+
+Many devices have physical buttons that give us quick access to premium features such as the Android “back” button, speaker volume modification, or the “return to home” screen button. Moreover, some smart watches feature a physical auxiliary button. An example is the Digital Crown of the Apple Watch that allows you to return to the main screen, zoom on the screen, etc.
+
+![Physical buttons in a smart watch](/images/01/button.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+*Example of physical buttons in an Apple 4 Watch Series 4 smart watch*. 
+Source: [Janothan Parker @ Wikimedia](https://commons.wikimedia.org/wiki/File:Apple_Watch_Series_4_Extract.png). License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+Smart glasses usually have physical buttons on the side for input management. These buttons allow you to move through menus, zoom, ...
+
+Devices without physical buttons perform the above operations using gestures on the screen.
+
+##	Touch screens
+
+There are two basic types of technologies: capacitive and resistive.
+
+Capacitive displays are more expensive to manufacture, which is why they are present in high- or mid-end devices. Screens of this type allow the tapping of more than one finger at a time. This feature is called  multitouch. If our app is going to be installed on devices with multitouch screens, we can use a gesture-based programming technique. One of the most common gestures is a pinch, which is using two fingers to adjust the zoom.
+
+Resistive displays are much cheaper to manufacture. They are present in low-end devices or industrial devices that do not require multitouch.
+
+##	Haptic feedback 
+
+Haptic feedback aims to provide information to the user by means of touch. It is achieved with the device vibration motor. Its most common use is the vibration the device makes when it receives a call.
+
+High-end devices feature vibration motors that can perform many different vibrations. These vibrations can be associated with different application actions, creating a much more immersive feel.
+
+---
+
 ## Communications
 
 ### MWWAN (Mobile Wireless Wide Area Network)
@@ -64,9 +100,7 @@ NFC is a very short distance communications technology used primarily for electr
 
 RFID is a remote data storage and retrieval system that uses devices called tags. The main purpose of RFID technology is to transmit the identity of an object (similar to a unique serial number). For this reason, it is primarily used in many industrial mobile devices and in the retail sector.
 
-## Local storage
-
-We need to determine the amount of storage that our app will need and compare it to the capacity available on our target devices. It is also interesting to determine the level of security of the local file system, in case sensitive information needs to be stored locally.
+---
 
 ## Sensors
 
@@ -104,36 +138,7 @@ This positioning is complemented by a compass sensor that allows us to determine
 
 Many smartwatches have a broad array of medical sensors to capture information about: heart rate, blood oxygen level, and ultrasound-based blood pressure sensors are currently being worked on. Moreover, some smartwatches carry several heart rate sensors to allow medical-grade electrocardiograms (ECGs) to be performed.
 
-##	Sound
-
-Mobile devices have increased the quality of their sound systems by including variants such as Dolby Atmos. Dolby Atmos allows you to hear three-dimensional surround sound. To achieve this effect on mobile phones, the two speakers on the phone are usually used next to the two headphones.
-
-## Physical buttons
-
-Many devices have physical buttons that give us quick access to premium features such as the Android “back” button, speaker volume modification, or the “return to home” screen button. Moreover, some smart watches feature a physical auxiliary button. An example is the Digital Crown of the Apple Watch that allows you to return to the main screen, zoom on the screen, etc.
-
-
-![Physical buttons in a smart watch](/images/01/button.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
-*Example of physical buttons in an Apple 4 Watch Series 4 smart watch*. 
-Source: [Janothan Parker @ Wikimedia](https://commons.wikimedia.org/wiki/File:Apple_Watch_Series_4_Extract.png). License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-
-Smart glasses usually have physical buttons on the side for input management. These buttons allow you to move through menus, zoom, ...
-
-Devices without physical buttons perform the above operations using gestures on the screen.
-
-##	Touch screens
-
-There are two basic types of technologies: capacitive and resistive.
-
-Capacitive displays are more expensive to manufacture, which is why they are present in high- or mid-end devices. Screens of this type allow the tapping of more than one finger at a time. This feature is called  multitouch. If our app is going to be installed on devices with multitouch screens, we can use a gesture-based programming technique. One of the most common gestures is a pinch, which is using two fingers to adjust the zoom.
-
-Resistive displays are much cheaper to manufacture. They are present in low-end devices or industrial devices that do not require multitouch.
-
-##	Haptic feedback 
-
-Haptic feedback aims to provide information to the user by means of touch. It is achieved with the device vibration motor. Its most common use is the vibration the device makes when it receives a call.
-
-High-end devices feature vibration motors that can perform many different vibrations. These vibrations can be associated with different application actions, creating a much more immersive feel.
+---
 
 
 
