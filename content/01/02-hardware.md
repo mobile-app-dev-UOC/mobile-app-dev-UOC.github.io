@@ -82,6 +82,57 @@ The most typical use of the accelerometer and gyroscope is to determine whether 
 
 It is very important to determine if our device has any type of noise cancellation system.
 
+###	Camera
+
+Cameras are one of the fastest-evolving sensors in both photography and video. We must determine what features will be needed in our application: resolution, frames per second / fps (in case of video), etc.
+
+Another very important aspect depending on the application we want to develop is whether we can access directly to the raw data gathered by the sensor (RAW format). Most devices do not allow access to this format and only provide images that are already processed in JPEG or similar formats. If we are going to develop professional photographty applications it is very useful to be able to directly access RAW information.
+
+###	LIDAR
+
+**Light Detection and Ranging** or **Laser Imaging Detection and Ranging**. 
+
+LIDAR is a laser-based sensor that allows accurate distance measurements from our device to an object in our environment. Using this sensor dramatically improves the AR application experience. Another use case of LIDAR is performing a 3D scan of an object.
+
+###	Positioning: GPS, Compass
+
+Global Positioning System (GPS)-based positioning is a critical tool for a multitude of applications. The GPS system gives us the latitude and longitude of the position where our device is located. 
+
+This positioning is complemented by a compass sensor that allows us to determine if we are moving in the right direction more accurately.  Remember that GPS positioning does not work indoors, because the signal is not received correctly from the GPS satellites that provide us with the information. Indoor positioning attempts have been made using only the compass information.
+
+###	Medical sensors
+
+Many smartwatches have a broad array of medical sensors to capture information about: heart rate, blood oxygen level, and ultrasound-based blood pressure sensors are currently being worked on. Moreover, some smartwatches carry several heart rate sensors to allow medical-grade electrocardiograms (ECGs) to be performed.
+
+##	Sound
+
+Mobile devices have increased the quality of their sound systems by including variants such as Dolby Atmos. Dolby Atmos allows you to hear three-dimensional surround sound. To achieve this effect on mobile phones, the two speakers on the phone are usually used next to the two headphones.
+
+## Physical buttons
+
+Many devices have physical buttons that give us quick access to premium features such as the Android “back” button, speaker volume modification, or the “return to home” screen button. Moreover, some smart watches feature a physical auxiliary button. An example is the Digital Crown of the Apple Watch that allows you to return to the main screen, zoom on the screen, etc.
+
+
+![Physical buttons][/images/01/button.jpg]
+
+
+Smart glasses usually have physical buttons on the side for input management. These buttons allow you to move through menus, zoom, etc.
+
+Devices without physical buttons perform the above operations using gestures on the screen.
+
+##	Touch screens
+
+There are two basic types of technologies: capacitive and resistive.
+
+Capacitive displays are more expensive to manufacture, which is why they are present in high- or mid-end devices. Screens of this type allow the tapping of more than one finger at a time. This feature is called  multitouch. If our app is going to be installed on devices with multitouch screens, we can use a gesture-based programming technique. One of the most common gestures is a pinch, which is using two fingers to adjust the zoom.
+
+Resistive displays are much cheaper to manufacture. They are present in low-end devices or industrial devices that do not require multitouch.
+
+##	Haptic feedback 
+
+Haptic feedback aims to provide information to the user by means of touch. It is achieved with the device vibration motor. Its most common use is the vibration the device makes when it receives a call.
+
+High-end devices feature vibration motors that can perform many different vibrations. These vibrations can be associated with different application actions, creating a much more immersive feel.
 
 
 
