@@ -138,7 +138,6 @@ This positioning is complemented by a compass sensor that allows us to determine
 
 Many smartwatches have a broad array of medical sensors to capture information about: heart rate, blood oxygen level, and ultrasound-based blood pressure sensors are currently being worked on. Moreover, some smartwatches carry several heart rate sensors to allow medical-grade electrocardiograms (ECGs) to be performed.
 
----
 
 
 
