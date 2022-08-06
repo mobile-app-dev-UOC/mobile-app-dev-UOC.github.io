@@ -15,7 +15,7 @@ In addition to choosing the target ecosystem for an application, it is important
 
 As often happens with Apple, Apple owns its own proprietary operating systems for its mobile devices. This gives them more control of your products and optimizes their operating system’s use of available hardware.
 
-> ![Apple devices](/images/01/apple-devices.jpg)  
+> ![Apple devices](/images/01/apple-devices.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *iPhone 13 Pro and Apple Watch.*  
 > Source: [Simon Waldherr @ Wikimedia](https://commons.wikimedia.org/wiki/File:IPhone_13_Pro_and_Apple_Watch.jpg) License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
@@ -79,7 +79,7 @@ Zircon tries to reduce the number of functionalities provided by the operating s
 [https://fuchsia.dev/](https://fuchsia.dev/)
 
 
-> ![Zircon](/images/01/zircon.png)  
+> ![Zircon](/images/01/zircon.png){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Comparing typical core components to Zircon core components*  
 > Source: [Fuchsia.dev](https://fuchsia.dev/fuchsia-src/get-started/learn/intro/zircon) License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
