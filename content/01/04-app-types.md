@@ -37,7 +37,7 @@ Initially, the programming language of choice to develop apps was Java (for proc
 Kotlin runs on the Java Virtual Machine. Its ability to interoperate with Java has facilitated its rapid adoption. In addition, Kotlin can also be compiled into JavaScript. 
 
 
-## Developing native apps on the Apple ecosystem
+### Developing native apps on the Apple ecosystem
 
 [Xcode](https://developer.apple.com/xcode/) is the development tool provided by Apple to build apps for iOS, iPadOS, and watchOS. Originally, the programming language of choice was Objective-C. Objective-C was a language born in 1980 that had barely been modified since then. That’s why in 2014 Apple launched Swift as a preferred programming language to develop applications. Swift is a modern language with a very fast learning curve. This explains its rapid adoption by the developer community. However, the presence of Objective-C behind the scenes continues to be embedded in certain common libraries.
 
@@ -86,7 +86,7 @@ For the Android ecosystem, this is a perfect solution as developers only need to
 
 ### Unity
 
-[Unity](https://unity.com/) is a multi-platform video game engine that has quickly become widely adopted. Considering mobile development, Unity supports versions for Android and iOS using OpenGL ES in both cases. From version 5.6, it also supports Metal low-level APIs on iOS and Vulcan on Android. Unity’s programming languages are C# and UnityScript, a JavaScript-like language. It offers a well-managed component repository called the Unity Asset Store. It generates applications that achieve native performance. 
+[Unity](https://unity.com/) is a multi-platform video game engine that has quickly become widely adopted. Considering mobile development, Unity supports versions for Android and iOS using OpenGL ES in both cases. From version 5.6, it also supports Metal low-level APIs on iOS and Vulcan on Android. Unity’s programming languages are C# and UnityScript, a JavaScript-like language. It offers a well-managed component repository called the [Unity Asset Store](https://assetstore.unity.com/). It generates applications that achieve native performance. 
 
 The problem with this type of system is that the provider, in this case, Unity, has to provide access to the new capabilities introduced by the operating system.  Its version known as “Personal” is free but can only be used if your income is below $100,000.
 
