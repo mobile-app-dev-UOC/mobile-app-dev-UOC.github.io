@@ -117,4 +117,4 @@ It is worth studying the rest of the templates provided by Android Studio. We ca
 > *Bottom navigation activity.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-- **Fullscreen Activity:** This activity runs full screen, without the title bar of Android apps. In many situations, customers request complete control over the design of the app. Thus, this is one of the most popular templates It is typically used with the 1 Activity - N Fragments paradigm or as a container in a Web view. We will discuss all of these choices in detail in the following sections.
+- **Fullscreen Activity:** This activity runs full screen, without the title bar of Android apps. In many situations, customers request complete control over the design of the app. Thus, this is one of the most popular templates. It is typically used with the 1 Activity - N Fragments paradigm or as a container in a Web view. We will discuss all of these choices in detail in the following sections.
