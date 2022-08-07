@@ -51,7 +51,7 @@ The project navigator is located at the top left of the user interface. It is ty
 > *Android Studios' project navigator.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-- The `Android` Perspective is the logical perspective of an Android app 
+- The `Android` perspective is the logical perspective of an Android app 
 - The `Project` perspective is an image of the directory and file structure of our development environment.
 
 When we click on any file in the left browser, its corresponding editor opens on the right-hand side of the screen.
@@ -59,4 +59,51 @@ When we click on any file in the left browser, its corresponding editor opens on
 > ![Sample editor.](/images/02/editor.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Sample editor.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+At the bottom there are several tabs:
+
+> ![Bottom tabs.](/images/02/bottom-tabs.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Bottom tabs.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+- **Problems:** It informs us about syntax problems, missing files, etc.
+- **Terminal:** It allows us to invoke operating system commands directly from the development environment.
+- **LogCat:** It is important in the Debug process. It shows error messages and alerts.
+- **Build:** It reports the progress of the Build process. Errors may also appear on this screen.
+
+> ![Build tab.](/images/02/build-tab.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Build tab.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+- **Profiler:** It offersApplication performance measurements.
+- **Event Log:** Window where the environment displays messages from each process being executed.
+
+In [Section 6](/content/06/) (dedicated to debugging and testing) we will describe in more detail the panels used in the debug process.
+
+When we click on a layout-type item (those in the `res/layout` folder of the side browser) the Android Studio interface layout editor is launched. On the left of this editor, there is a library of components that we can use on our user interfaces by dragging the component over the design.  At the top of the editor, there is a drop-down that allows us to change the device type. In this way, we can check how the interface behaves when changing the screen size.
+
+> ![Layout editor.](/images/02/layout-editor.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Layout editor.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+The visual editor is one of the biggest challenges for the developers of an IDE. Typically for issues such as accuracy, and the use of overlapping elements, ... developers prefer to use the code view of the layout editor. To access this view, we must press the `Code` button.
+
+> ![Code view of the layout editor](/images/02/code-layout-editor.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Code view of the layout editor.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+We can return to the design view by clicking on the `Design` button at the top.
+
+> ![Back to design view](/images/02/back-to-design-editor.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Returning to the design view of the layout editor.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+## 2.1.3. Other useful project templates
+
+
+It is worth studying the rest of the templates provided by Android Studio. We can learn some techniques just by looking at the code that is automatically generated for these templates:
+
+- **Login Activity:** It implements all the logic of a login system using the Model-View-ViewModel (MVVM) paradigm. 
+
+- **Navigation Drawer Activity:**  Activity that implements the classic drop-down menu on the right.  Each option is implemented as a fragment (see [Section 4.3](/content/04/03-fragments)). That is, it uses the 1 Activity – N Fragments paradigm  (see [Section 4.4](/content/04/04-1-n-vs-n-n)).
 
