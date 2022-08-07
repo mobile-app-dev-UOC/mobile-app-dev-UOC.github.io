@@ -107,3 +107,14 @@ It is worth studying the rest of the templates provided by Android Studio. We ca
 
 - **Navigation Drawer Activity:**  Activity that implements the classic drop-down menu on the right.  Each option is implemented as a fragment (see [Section 4.3](/content/04/03-fragments)). That is, it uses the 1 Activity – N Fragments paradigm  (see [Section 4.4](/content/04/04-1-n-vs-n-n)).
 
+> ![Navigation drawer activity](/images/02/navigation-drawer.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Navigation drawer activity.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+- **Bottom Navigation Activity:** Activity that implements a bottom navigation bar. Again, it uses a 1 Activity - N Fragments paradigm (see [Section 4.4](/content/04/04-1-n-vs-n-n)).  Automatically configures cross-snippet navigation.
+
+> ![Bottom navigation activity](/images/02/bottom-navigation.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Bottom navigation activity.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+- **Fullscreen Activity:** This activity runs full screen, without the title bar of Android apps. In many situations, customers request complete control over the design of the app. Thus, this is one of the most popular templates It is typically used with the 1 Activity - N Fragments paradigm or as a container in a Web view. We will discuss all of these choices in detail in the following sections.
