@@ -52,7 +52,7 @@ The Manifest is an XML file that contains essential settings for Android Studio,
 
 This is what a minimal `manifest.xml` file looks like:
 
-````xml
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
    package="edu.uoc.hello">
@@ -77,7 +77,6 @@ This is what a minimal `manifest.xml` file looks like:
 
 </manifest>
 ```
-
 
 In the root element, we indicate the name of our package, which is the unique identifier of our application within the entire Android ecosystem. It is usually created using [reverse internet domain notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation). In this case, the unique identifier we have chosen is "edu.uoc.hello"
 
