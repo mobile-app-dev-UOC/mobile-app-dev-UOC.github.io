@@ -155,9 +155,9 @@ In addition to the activities, there are three other types of elements that are 
 <service
    android:name=".MyFirebaseMessagingService"
    android:exported="false">
-   <tent-filter>
+   <intent-filter>
        <action android:name="com.google.firebase.MESSAGING_EVENT" />
-   </tent-filter>
+   </intent-filter>
 </service>
 ```
 
