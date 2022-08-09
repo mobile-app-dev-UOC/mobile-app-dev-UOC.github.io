@@ -183,7 +183,7 @@ Android stores `android:authorities` to determine which app will provide the con
    android:exported="true" >
    <action android:name="android.intent.action.BATTERY_LOW"/>
 </receiver>
-``
+```
 
 
 
