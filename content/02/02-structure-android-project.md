@@ -44,4 +44,40 @@ Then, from the `Project` view, we go to the folder and then we create a file. Af
 
 
 > ***Learn more:***  
-> [https://developer.android.com/studio/projects](https://developer.android.com/studio/projects )
+> [https://developer.android.com/studio/projects](https://developer.android.com/studio/projects)
+
+## 2.2.2 Manifest
+
+The Manifest is an XML file that contains essential settings for Android Studio, Google Play Store, and the Android operating system.
+
+This is what a minimal `manifest.xml` file looks like:
+
+````xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+   package="edu.uoc.hello">
+
+   <application
+       android:allowBackup="true"
+       android:icon="@mipmap/ic_launcher"
+       android:label="@string/app_name"
+       android:roundIcon="@mipmap/ic_launcher_round"
+       android:supportsRtl="true"
+       android:theme="@style/Theme.Hello">
+       <activity
+           android:name=".MainActivity"
+           android:exported="true">
+           <intent-filter>
+               <action android:name="android.intent.action.MAIN" />
+
+               <category android:name="android.intent.category.LAUNCHER" />
+           </intent-filter>
+       </activity>
+   </application>
+
+</manifest>
+```
+
+
+In the root element, we indicate the name of our package, which is the unique identifier of our application within the entire Android ecosystem. It is usually created using [reverse internet domain notation](https://en.wikipedia.org/wiki/Reverse_domain_name_notation). In this case, the unique identifier we have chosen is "edu.uoc.hello"
+
