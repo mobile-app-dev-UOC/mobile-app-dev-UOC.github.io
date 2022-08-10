@@ -24,6 +24,8 @@ Gradle lets us generate different versions of the application for different type
 
 An Android project usually contains several Gradle files: one that is always used for the entire project; and another one for each app included in the project. This means that by default we should prepare at least two Gradle files: the project and the single application that is generated in the project.
 
+## 2.3.1. Gradle file for a project
+
 The default Gradle file usually looks like this:
 
 ```gradle
@@ -42,6 +44,8 @@ task clean(type: Delete) {
 The `plugins` section lists which plugins are required by Gradle to generate the APK. In this case, as we develop the app using the Kotlin language, we will need the plugin that allows us to compile the Kotlin code. This plugin is “org.jetbrains.kotlin.android”. The `apply = false` parameter indicates that it should not be used automatically: Android Studio should check the specific Gradle settings for each module or application.
 
 After the `plugins` section, a task (`clean`) is added to Gradle to delete everything in the build directory. 
+
+## 2.3.2 Gradle file for an application
 
 After inspecting the project’s Gradle file, let us now take a look at the Gradle file for an application:
 
@@ -137,7 +141,7 @@ The `applicationId` is our application identifier within the Android ecosystem. 
 
 The `versionCode` is the version number of our app (not Android), which must be an incremental numeric value and is a private value (not shown to users). It is used internally by the Google Play Store to distinguish between different versions. In this way, it will always offer the latest version to each type of device.
 
-Then, the versionName is the version name of the application that is displayed to users. It only has informational value. Although it is usually used in a format like “1.2” or “1.3.3”, no specific format is required.
+Then, the `versionName` is the version name of the application that is displayed to users. It only has informational value. Although it is usually used in a format like “1.2” or “1.3.3”, no specific format is required.
 
 `testInstrumentationRunner` instructs Gradle that we need to use JUnit4 test classes. JUnit4 is a testing library that enables us to write and run unit tests. These tests check individual methods in isolation by defining an input and the expected output that should be computed for that input.
 
@@ -211,7 +215,9 @@ This section specifies which extensions must be downloaded in order to generate 
  
 - "androidx.constraintlayout:constraintlayout" lets us use the most recent type of Android interfaces.
 
-The **settings.gradle** file tells Gradle in which repositories it can find the plugins and libraries indicated in the dependencies.
+## 2.3.3. Gradle settings
+
+The `settings.gradle file tells Gradle in which repositories it can find the plugins and libraries indicated in the dependencies.
 
 ```gradle
 pluginManagement {
