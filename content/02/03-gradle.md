@@ -217,7 +217,7 @@ This section specifies which extensions must be downloaded in order to generate 
 
 ## 2.3.3. Gradle settings
 
-The `settings.gradle file tells Gradle in which repositories it can find the plugins and libraries indicated in the dependencies.
+The `settings.gradle` file tells Gradle in which repositories it can find the plugins and libraries indicated in the dependencies.
 
 ```gradle
 pluginManagement {
