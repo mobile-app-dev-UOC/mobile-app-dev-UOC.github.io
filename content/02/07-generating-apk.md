@@ -25,7 +25,7 @@ On the next screen, we will be asked to choose a key to sign the app. This is ne
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 
-To create a key, we first created a **Key Store**. A Key Store is an encrypted container that contains multiple keys. 
+To create a key, we first create a **Key Store**. A Key Store is an encrypted container that contains multiple keys. 
 
 > ![Creating a key store](/images/02/key-store.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Creating a key store.*  
