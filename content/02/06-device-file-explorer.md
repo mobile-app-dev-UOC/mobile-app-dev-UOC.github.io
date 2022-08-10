@@ -13,6 +13,6 @@ If a file that should be inside a directory is not visible, select the directory
 
 Furthermore, the context menu in Device File Explorer lets us upload files or download files from the device to the computer where we are developing. 
 
-> ![Uploading files to a device](/images/02/uploading-files.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![Uploading files to a device](/images/02/upload-files.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Uploading files to an Android device.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
