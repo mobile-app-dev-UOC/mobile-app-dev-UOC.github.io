@@ -16,6 +16,7 @@ Kotlin can manipulate different data types. The simplest are integers (Byte, Sho
 Each numeric type uses a different number of bits for storing data. That is, each one can encode a different range of values and, in the case of floating-point numbers, achieves a different level of precision:
 
 **Integer numbers**
+
 |Type                  |	Symbol	| Size (bits)	| Minimum	       | Maximum          |
 |----------------------|------------|---------------|------------------|------------------|
 |Byte	               |            |	8	        | -2^7=128         | 2^7-1 = 127      |
@@ -24,6 +25,7 @@ Each numeric type uses a different number of bits for storing data. That is, eac
 |Long	               | L          |	64          | -2^63 = -9*10^18 | 2^63-1 = 9*10^18 |
 
 **Floating-point numbers**
+
 |Type	               | Symbol | Size (bits) | Precision        |
 |----------------------|--------|-------------|------------------|
 |Float	               | f / F  |	32	      | Single precision |
