@@ -96,9 +96,9 @@ However, the second assignment is correct.
 v = tmp2
 ```
 
-### 3.1.3. The String data type
+## 3.1.3. The String data type
 
-A string stores a sequence of characters. We can find two types of string literals.
+A string stores a sequence of characters. We can define string literals in two different ways:
 
 - Single-line string literals with escape sequences for special characters for line breaks, tabs, etc.
 
@@ -109,7 +109,7 @@ val s = "My, cat \n"
 - Multiline string literals without escape sequences.
 
 ```kotlin
-Var text = """
+var text = """
             You have two children
             Tell me about them
 """.trimMargin()
@@ -118,7 +118,7 @@ Var text = """
 The blank spaces in front of `You` and `Tell` are included as part of the string. If we don’t want this to happen, we need to remove them explicitly.
 
 ```kotlin
-Var text = """
+var text = """
             |You have two children
             |Tell me about them
 """.trimMargin()
@@ -127,5 +127,5 @@ Var text = """
 The `+` operator can be used to concatenate strings.
 
 ```kotlin
-Val text = "hello " + "friend"
+val text = "hello " + "friend"
 ```
