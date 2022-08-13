@@ -47,6 +47,9 @@ val z = 3000000000 // Long
 
 In this case, variable `y` is of type `Int`. Meanwhile, constant `z` is of type `Long` because the value is too large fit in an `Int` variable. 
 
+
+
+
 If we want a variable to have a specific type, it is best to explicitly declare that type.
 
 ```kotlin
@@ -129,3 +132,75 @@ The `+` operator can be used to concatenate strings.
 ```kotlin
 val text = "hello " + "friend"
 ```
+
+### 3.1.3.1. String templates
+
+
+Kotlin can insert the value of a variable within a string.
+
+```kotlin
+var mail_count = 3
+var message = “You have $mail_count mails”
+```
+
+Moreover, Kotlin can also insert the result of evaluating an expression within a string:
+
+```kotlin
+var points = 3
+var message = "You have two times points ${2*points}"
+```
+
+To use the dollar (`$`) symbol within a string, we must use the escape sequence `\$`.
+
+```kotlin
+var msg = "\$t"
+```
+
+For more complex formatting, we can use the `format` method from class `String.`
+
+```kotlin
+var msg2 = String.format("%.2f",10.708)
+```
+
+Floating point numbers are rounded by default to the nearest value. In this example, the `format` method would return the string `“10.71”`.
+
+## 3.1.4. Type casts
+
+Kotlin does not perform automatic type casts. For example, if a method expects to receive a value of type `Long` as a parameter, we cannot call the method with a value of type `Int`. The same is true for floating point numbers: there is no implicit cast from `Float` to `Double`.
+
+Nevertheless, Kotlin offers methods to convert a value of one basic type to a value of another basic type. For example:
+
+```kotlin
+val str:String = 4.toString()
+// Correct: str <- "4"
+```
+
+Like `toString()`, methods such as `toLong()` or `toDouble()` convert numbers between different numeric types.
+
+On the other hand, if we have a variable of type `Any` we may need to recover its value using a more specific type. Unlike methods such as `toString()`, this cast does not transform the stored value, only the type assigned to it. There are two ways to achieve this:
+
+- **The unsafe type cast** `as`: Conversion is always performed and can cause runtime errors.
+
+```kotlin
+var tmp1: String? = null
+var tmp2: String? = null
+var v1: Any = "hello"
+var v2: Any = 12
+tmp1 =  v1 as String 
+// Correct: tmp1 <- "hello"
+tmp2 = v2 as String
+// Runtime error: 12 is a number, not a String
+```
+
+- **The secure type cast** `as?`: If the conversion cannot be performed, the result will be `null`.
+
+```kotlin
+tmp1 =  v1 as? String 
+// Correct: tmp1 <- "hello"
+tmp2 =  v2 as? String
+// tmp1 <- null (12 is a number, not a String)
+```
+
+### 3.1.5. Finding out the value of a variable
+
+The `is` operator checks if a Kotlin expression has a given type. The `EXP is TYPE` syntax returns `true` if `EXP` has the type `TYPE`, and `false` otherwise. `EXP !is TYPE` can also be used to reverse the test.  We can use this operator within an `if` (single-branch conditional) or `when (multi-branch conditional) statement.
