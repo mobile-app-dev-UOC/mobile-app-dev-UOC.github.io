@@ -237,8 +237,8 @@ Kotlin variables and expressions can have a `null` value.  As in any object-orie
 Operator `?` (used after the object name) lets us conditionally make method call or access a property. The call or access is only performed if the object is not null.
 
 ```kotlin
-Var m:Manager? = 
-nullvar t1:Element = Element()
+Var m:Manager? = null
+var t1:Element = Element()
 m?.Add(t1)
 ```
 
