@@ -201,6 +201,53 @@ tmp2 =  v2 as? String
 // tmp1 <- null (12 is a number, not a String)
 ```
 
-### 3.1.5. Finding out the value of a variable
+## 3.1.5. Finding out the type of a variable
 
-The `is` operator checks if a Kotlin expression has a given type. The `EXP is TYPE` syntax returns `true` if `EXP` has the type `TYPE`, and `false` otherwise. `EXP !is TYPE` can also be used to reverse the test.  We can use this operator within an `if` (single-branch conditional) or `when (multi-branch conditional) statement.
+The `is` operator checks if a Kotlin expression has a given type. The `EXP is TYPE` syntax returns `true` if `EXP` has the type `TYPE`, and `false` otherwise. `EXP !is TYPE` can also be used to reverse the test.  We can use this operator within an `if` (single-branch conditional) or `when` (multi-branch conditional) statement.
+
+For example, let us consider the following code:
+
+```kotlin
+var tmp2: String = “hello”
+var v:Any = 12
+TestType(v)
+v = tmp2
+TestType(v)
+```
+We define `TestType` as:
+
+```kotlin
+fun TestType(v:Any) 
+{ 
+    when (v) { 
+        is Int -> Log.i("info","I'm Int") 
+        is String -> Log.i("info","I'm String") 
+        is Float -> Log.i("info","I'm Float") 
+    } 
+}
+```
+
+In this example, the first call will return `"I'm Int"` and the second one `"I’m String"`.
+
+
+## 3.1.6. Not null check
+
+Kotlin variables and expressions can have a `null` value.  As in any object-oriented language, accessing an object with a null value will cause a runtime error. 
+
+Operator `?` (used after the object name) lets us conditionally make method call or access a property. The call or access is only performed if the object is not null.
+
+```kotlin
+Var m:Manager? = 
+nullvar t1:Element = Element()
+m?.Add(t1)
+```
+
+Conversely, we can force the method call using operator `!!`:
+
+```kotlin
+m!!.Add(t1)
+```
+
+With this syntax, we are forcing the method call even if the value of variable `m` is null. In our example this would cause a runtime exception. Thus, before using this operator we need to ensure that the variable is not null.
+
+
