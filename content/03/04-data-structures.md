@@ -45,3 +45,7 @@ Finally, we can create an Array using specific methods depending on the type:
 val array = intArrayOf(1, 2, 3, 4)
 val array = arrayOfNulls<Number>(5)
 ```
+
+## 3.4.2. ArrayList
+
+
