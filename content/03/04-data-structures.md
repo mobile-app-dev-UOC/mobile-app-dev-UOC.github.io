@@ -62,7 +62,7 @@ arrayList.add("Bye")
 arrayList.removeAt(0)
 ```
 
-At the end of these operations, our ArrayList has only one element: "Bye".
+At the end of these operations, our ArrayList has only one element: `"Bye"`.
 
 ## 3.4.3. Kotlin Standard Library
 
@@ -79,7 +79,7 @@ val list = listOf("123", "12", "1234")
 val sorted = list.sortedBy { it.length }
 ```
 
-Using `sortedBy` we are always using a numerical order. Nevertheless, we may want to define our sorting criterion and therefore our own ordering. To do this, we must define a class and within it we must implement a static method called `compare`. Static methods are explained in more detail in [Section 3.6.7](/content/03/06-objects).
+Using `sortedBy` we are always using a numerical order. Nevertheless, we may want to define our sorting criterion and therefore our own ordering. To do this, we must define a class and within it we must implement a static method called `compare`. Static methods are explained in more detail in [Section 3.6.8](/content/03/06-objects).
 
 ### 3.4.3.2. Set
 
