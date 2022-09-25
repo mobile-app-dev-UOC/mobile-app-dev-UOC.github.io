@@ -45,7 +45,7 @@ var y = 1 // Int
 val z = 3000000000 // Long
 ```
 
-In this case, variable `y` is of type `Int`. Meanwhile, constant `z` is of type `Long` because the value is too large fit in an `Int` variable. 
+In this case, variable `y` is of type `Int`. Meanwhile, constant `z` is of type `Long` because the value is too large to fit in an `Int` variable. 
 
 
 
@@ -78,7 +78,7 @@ In Kotlin all basic types are also considered classes (in an object-oriented pro
 
 ## 3.1.2. Special types
 
-Type `Any` represents all types in Kotlin. Variables declared as nullable it cannot be assigned to variables of type `Any`.
+Type `Any` represents all types in Kotlin. Variables declared as nullable cannot be assigned to variables of type `Any`.
 
 ```kotlin
 var tmp1: String? = null

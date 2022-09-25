@@ -46,7 +46,7 @@ Below we select the version we want to sign. In this case we select the `release
 > *Selecting the version of the app to be signed.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-Then, we click the `Finish` button and start the generation process. When the process ends in the lower right corner of Android Studio, a message appears allowing us to directly access the folder where it was generated.
+Then, we click on the `Finish` button and start the generation process. When the process ends in the lower right corner of Android Studio, a message appears allowing us to directly access the folder where it was generated.
 
 > ![APK complete message](/images/02/apk-completed.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Message indicating that our APK is ready.*  

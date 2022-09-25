@@ -13,7 +13,7 @@ When we develop an app, we can target a single ecosystem, but we will generally 
 
 ## Native apps
 
-Native applications are specially designed and deployed for the execution context (platform or device) on which they will run. As a result, they can take advantage of all the capabilities of those devices. For this reason, native apps deliver the best user experience. They are also sometimes subject to specific standards of device manufacturers or platform owners. 
+Native applications are specially designed and deployed for the execution context (platform or device) on which they will run. As a result, they can take advantage of all the capabilities of those devices. For this reason, native apps deliver the best user experience. Sometimes,they are also subject to specific standards of device manufacturers or platform owners. 
 
 For instance, some types of applications that are typically implemented natively are applications that use multitasking, specific use of sensors, specific use of Bluetooth, ...
 

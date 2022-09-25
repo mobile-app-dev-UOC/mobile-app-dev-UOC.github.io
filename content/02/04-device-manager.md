@@ -35,7 +35,7 @@ In this section we must consider two aspects:
 
 By default, we should use Android versions with Google APIs. Versions without Google APIs should only be selected when we are completely sure that our app should work on devices without them. In that case, we should also include the equivalent APIs supplied by the device manufacturer. 
 
-If the operating system version is not available locally, it will be turned off in the interface. In order to use it, we need to download it beforehand.
+If the operating system version is not locally available, it will be turned off in the interface. In order to use it, we need to download it beforehand.
 
 Once the operating system has been selected, we will need to select certain device features that we can modify later:
 
@@ -63,7 +63,7 @@ Clicking on the down arrow displays a menu of options where we can delete, dupli
 > *Actions involving AVDs.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-The most interesting option in this list is `Wipe Data`. This button clears all user data and restores the device to its default factory settings. It may be necessary to perform this action periodically. Otherwise, after many application have been installed the virtual device may start emitting error messages like `Waiting for target to come online`.
+The most interesting option in this list is `Wipe Data`. This button clears all user data and restores the device to its default factory settings. It may be necessary to perform this action periodically. Otherwise, after installing many applications, the virtual device may start emitting error messages like `Waiting for target to come online`.
 
 To choose an emulator, we select it in the top bar of Android Studio.Then, we click the play button if we want it to be installed without using the debugger. We can use the green bug button if we want to install and debug the app.
 

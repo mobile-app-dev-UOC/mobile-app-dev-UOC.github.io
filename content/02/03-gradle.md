@@ -99,9 +99,9 @@ dependencies {
 }
 ```
 
-The first section, `plugins`, lists the plugins that will actually be used to compile this module. In this case, the "com.android.application" plugin tells Gradle how to generate an Android application and the "org.jetbrains.kotlin.android"   plugin is used so that Kotlin code can be compiled. If instead of an application we were developing a library to be used by Android applications, instead of using the plugin "com.android.application" we would have to use "com.android.library".
+The first section, `plugins`, lists the plugins that will actually be used to compile this module. In this case, the "com.android.application" plugin tells Gradle how to generate an Android application and the "org.jetbrains.kotlin.android"   plugin is used so that Kotlin code can be compiled. If, instead of an application, we were developing a library to be used by Android applications, then we would have to use the plugin "com.android.library" instead of "com.android.application".
 
-The `Android` section is where you configure Android-specific settings, such as the Android version.There are several ways to name an Android version. A developer identifies the Android version using the **API level**.
+The `Android` section is where you configure Android-specific settings, such as the Android version. There are several ways to name an Android version. A developer identifies the Android version using the **API level**.
 
 | Platform version | API level | VERSION_CODE |
 |------------------|-----------|--------------|

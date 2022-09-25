@@ -7,7 +7,7 @@ nav_order: 1
 
 # 1.1. Mobile devices
 
-A **mobile device** is any small computer that can be carried easily using one or two hands with no additional supports. Notice that laptops are not included in this definition as they require a surface to be used.  
+A **mobile device** is any small computer that can be carried easily using one or two hands without an additional support. Notice that laptops are not included in this definition as they require a surface to be used.  
 
 Most mobile devices support some form of wireless communication (see [Section 1.2](/content/01/02-hardware) for a discussion of different types of connectivity). However, the need for connectivity is not a requirement in our definition. Indeed, some mobile devices preload data over a wired connection and are later used without requiring connectivity.
 

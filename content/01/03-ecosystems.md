@@ -7,7 +7,7 @@ nav_order: 3
 
 # 1.3 Ecosystems
 
-Mobile devices incorporate an operating system that encapsulates hardware features and offers libraries for easy development and APIs to access additional services. We refer to an operating system (or a family of related operating systems) as an **ecosystem**, which includes the set of hardware devices that support it, and the set of available libraries and services (app store, maps, mobile payment, ...). 
+Mobile devices incorporate an operating system that encapsulates hardware features and offers libraries for easy development, as well as APIs (application programming internfaces) to access additional services. We refer to an operating system (or a family of related operating systems) as an **ecosystem**, which includes the set of hardware devices that support it, and the set of available libraries and services (app store, maps, mobile payment, ...). 
 
 In addition to choosing the target ecosystem for an application, it is important to determine the target **version** of the ecosystem. Higher versions will offer more features, more services, and access to the latest hardware capabilities of the latest devices. However, they will also be supported on fewer devices so our app will not be available to certain users.
 
@@ -48,7 +48,7 @@ Today we can identify three types of Android systems:
 
 This is the most common version among devices targeting the general.  This version refers to Android code maintained by Google plus a set of functionalities known as the Google API. There is a wide range of Google APIs that facilitate programming such as: notifications, access to Google Maps, connection to Gmail, authentication, artificial intelligence-related libraries, improved keyboards, …
 
-Lack of access to these APIS will have a severe impact on development time.
+Lack of access to these APIs will have a severe impact on development time.
 
 ### b) Android without Google API
 

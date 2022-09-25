@@ -26,11 +26,11 @@ Our app will likely run on different devices with very different screen characte
 
 ## Battery
 
-While devices have an ever-increasing battery life, some hardware features are extremely battery-hungry. For example, apps that use GPS or Bluetooth intensively can drain a battery very quickly. 
+While devices have an ever-increasing battery life, some hardware features are extremely battery-hungry. For example, apps that intensively use GPS or Bluetooth can drain a battery very quickly. 
 
 ## Local storage
 
-We need to determine the amount of storage that our app will need and compare it to the capacity available on our target devices. It is also interesting to determine the level of security of the local file system, in case sensitive information needs to be stored locally.
+We need to determine the amount of storage that our app will need, and compare it to the available capacity on our target devices. It is also interesting to determine the level of security of the local file system, in case sensitive information needs to be stored locally.
 
 ##	Sound
 
@@ -69,7 +69,7 @@ High-end devices feature vibration motors that can perform many different vibrat
 ### MWWAN (Mobile Wireless Wide Area Network)
 	
 MWWAN networks are wireless networks that allow the connection of multiple mobile devices across a broad geographic area. Telecom carriers offer coverage using different technologies, referred to by their generation as 2G, 3G, 4G, 5G, ... Each generation offers transmission speed and capacity improvements. Nevertheless, the deployment of these networks can be uneven between different countries or even between different regions of the same country. 
-Today, most mobile devices are equipped with 4G technology. Older devices can only reach 3G and more advanced devices have 5G technology. We must keep in mind that if the country where the application is deployed does not have a 5G network, it will be irrelevant that our device supports this type of connectivity.
+Today, most mobile devices are equipped with 4G technology. Older devices can only reach 3G and more advanced devices implement 5G technology. We must keep in mind that if the country where the application is deployed does not have a 5G network, it will be irrelevant that our device supports this type of connectivity.
 
 ###	Wi-Fi 
 
@@ -93,7 +93,7 @@ In wireless transmissions, both speeds and distances refer to ideal conditions w
 
 [Bluetooth](https://www.bluetooth.com/) is a standard for wireless communications to exchange voice and data over short distances. For some applications, it is very important to determine the **Bluetooth version** supported by our device. There are large differences in energy consumption and distance reached depending on the Bluetooth version.
 
-### NFC (Near Field Communication). 
+### NFC (Near Field Communication) 
 
 [NFC](https://nfc-forum.org/) is a very short-distance communications technology used primarily for electronic payments.
 
@@ -105,11 +105,11 @@ In wireless transmissions, both speeds and distances refer to ideal conditions w
 
 ## Sensors
 
-### Biometric identification sensors.
+### Biometric identification sensors
 
 The best-known biometric sensor is the **fingerprint sensor**. It is typically used to access a device without entering any type of code or password.      
 
-### Accelerometer and gyroscope.
+### Accelerometer and gyroscope
 
 The most typical use of the accelerometer and gyroscope is to determine whether our device is in a vertical or horizontal position. They are also used in some video games as a video game controller. In addition, indoor positioning attempts have been made using these sensors.
 
@@ -119,7 +119,7 @@ It is very important to determine if our device has any type of noise cancellati
 
 ###	Camera
 
-Cameras are one of the fastest-evolving sensors in both photography and video. We must determine what features will be needed in our application: resolution, frames per second/fps (in case of video), etc.
+Cameras are one of the fastest-evolving sensors in both photography and video. We must determine what features will be needed in our application: resolution, frames per second (fps) -in case of video-, etc.
 
 Another very important aspect depending on the application we want to develop is whether we can access directly the raw data gathered by the sensor (RAW format). Most devices do not allow access to this format and only provide images that are already processed in JPEG or similar formats. If we are going to develop professional photography applications it is very useful to be able to directly access RAW information.
 
@@ -127,13 +127,13 @@ Another very important aspect depending on the application we want to develop is
 
 **Light Detection and Ranging** or **Laser Imaging Detection and Ranging**. 
 
-LIDAR is a laser-based sensor that allows accurate distance measurements from our device to an object in our environment. Using this sensor dramatically improves the AR application experience. Another use case of LIDAR is performing a 3D scan of an object.
+LIDAR is a laser-based sensor that allows accurate distance measurements from our device to an object in our environment. Using this sensor dramatically improves the augmented reality (AR) application experience. Another use case of LIDAR is performing a 3D scan of an object.
 
 ###	Positioning: GPS, Compass
 
 Global Positioning System (GPS)-based positioning is a critical tool for a multitude of applications. The GPS system gives us the latitude and longitude of the position where our device is located. 
 
-This positioning is complemented by a compass sensor that allows us to determine if we are moving in the right direction more accurately.  Remember that GPS positioning does not work indoors, because the signal is not received correctly from the GPS satellites that provide us with the information. Indoor positioning attempts have been made using only the compass information.
+This positioning is complemented by a compass sensor that allows us to determine more accurately if we are moving in the right direction.  Remember that GPS positioning does not work indoors, because the signal is not received correctly from the GPS satellites that provide us with the information. Indoor positioning attempts have been made using only the compass information.
 
 ###	Medical sensors
 

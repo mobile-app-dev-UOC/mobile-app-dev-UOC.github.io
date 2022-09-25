@@ -25,15 +25,15 @@ By default, there are three packages: the application and two test packages (`an
 
 The `res` folder contains all the resources the application needs: 
 
-- `Drawable`: graphic elements.
-- `Layout`: screen layout.
-- `Mipmap`: icons
-- `Values / Colors.xml`: colors
-- `Values / Strings.xml`: list of strings used in the static texts of the application.
+- `Drawable`: Graphic elements.
+- `Layout`: Screen layout.
+- `Mipmap`: Icons.
+- `Values / Colors.xml`: Colors.
+- `Values / Strings.xml`: List of strings used in the static texts of the application.
 - `Values / Themes`: Sets of values related to design settings.
 - `Gradle Scripts`: The set of scripts that tell Android Studio how to build the app.  
 
-When we create folders, sometimes the `Android`` view does not automatically refresh and it is necessary to go to the `Project` view, which is always up to date as it is an image of the file system.
+When we create folders, sometimes the `Android` view does not automatically refresh and it is necessary to go to the `Project` view, which is always up to date as it is an image of the file system.
 
 
 > ![Project view](/images/02/project-view.png){:style="display:block; margin-left:auto; margin-right:auto"}

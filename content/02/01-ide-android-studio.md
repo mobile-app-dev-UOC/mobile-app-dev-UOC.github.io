@@ -33,7 +33,7 @@ On the last screen of the creation process, we select the programming language t
 > *Selecting the programming language used to develop the app.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-Also on this screen, we can choose the minimum version on which our application will run, the `Minimum SDK`. If we choose a very recent version, we will be able to access the latest Android functionality. Nevertheless, this will greatly decrease the number of devices on which it can be installed. On the other hand, if we use an older version, it will be possible to install our app on many devices. However, we will have problems implementing some functionalities and in other devices performance might be an issue.
+Also on this screen, we can choose the minimum version on which our application will run, the `Minimum SDK`. If we choose a very recent version, we will be able to access the latest Android functionality. Nevertheless, this will greatly decrease the number of devices on which it can be installed. On the other hand, if we use an older version, it will be possible to install our app on many devices. However, we will have problems implementing some functionalities and, in other devices, performance might be an issue.
 
 For instance, if we choose API 28, Android 9.0 (Pie), Android Studio informs us that it can be installed on 69% of the devices.
 
@@ -48,7 +48,7 @@ In Android Studio, projects built from a template are ready to be executed: they
 The project navigator is located at the top left of the user interface. It is typically used in two perspectives:
 
 > ![Project navigator.](/images/02/project-navigator.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
-> *Android Studios' project navigator.*  
+> *Android Studio's project navigator.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 - The `Android` perspective is the logical perspective of an Android app 
@@ -75,7 +75,7 @@ At the bottom there are several tabs:
 > *Build tab.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-- **Profiler:** It offersApplication performance measurements.
+- **Profiler:** It offers application performance measurements.
 - **Event Log:** Window where the environment displays messages from each process being executed.
 
 In [Section 6](/content/06/) (dedicated to debugging and testing) we will describe in more detail the panels used in the debug process.
