@@ -87,7 +87,7 @@ A Set is a collection of objects without duplicates where order is not relevant.
 
 ### 3.4.3.3. Map
 
-A Map is a dictionary of `<key, value>`` pairs. Keys cannot be repeated but values can. 
+A Map is a dictionary of `<key, value>` pairs. Keys cannot be repeated but values can. 
 
 The typical way to use a Map is by reading/writing the value of a specific key:
 
