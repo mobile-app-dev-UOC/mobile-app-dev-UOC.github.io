@@ -222,7 +222,7 @@ finish()
 ## 4.1.5. Opening activities in a new task
 
 
-Android systems with API version 24 or later that support multitasking allow opening an activity in a new task.
+Android systems with API version 24 or above that support multitasking allow opening an activity in a new task.
 
 ```kotlin
 val intent = Intent(this, ScrollingActivity::class.java)
