@@ -9,7 +9,7 @@ nav_order: 2
 
 ViewModels were born to disconnect the model (the data used by our app) from the view (the specific way in which data is displayed on the screen). In this way, if the operating system or user makes changes that affect the visualization, the interface data is not lost because it is stored in the model.	
 
-> ![The lifecycle of a ViewModel](/images/05/viewmodel.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![The lifecycle of a ViewModel](/images/05/viewmodel-lifecycle.png){:style="display:block; margin-left:auto; margin-right:auto"}
 > *The lifecycle of a ViewModel.*  
 > Source: [Android Developers](https://developer.android.com/topic/libraries/architecture/viewmodel) License: [CC BY 2.5](http://creativecommons.org/licenses/by/2.5/)
 
