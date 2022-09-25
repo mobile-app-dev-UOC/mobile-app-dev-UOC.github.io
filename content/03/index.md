@@ -11,7 +11,7 @@ Kotlin is the preferred programming language for Android app development. It sup
 
 Kotlin is a language with compile-time type verification, like as C or Java: type errors are detected when the code is compiled (unlike interpreted languages such as Python where types are checked at runtime). Regarding its execution, a Kotlin application can be run on the Java Virtual Machine or on top of JavaScript. 
 
-The following would be an example of a “Hello world” program in Kotlin. This program prints the string “Hello world!” to the standard output. Notice that its syntax is similar to Java, in particular with respect to comments or method calls. You should also notice that in certain situations it is possible to avoid type declarations and there is no need to write semicolons (`;`) between statements.
+The following would be an example of a "Hello world" program in Kotlin. This program prints the string `"Hello world!"` to the standard output. Notice that its syntax is similar to Java, in particular with respect to comments or method calls. You should also notice that in certain situations it is possible to avoid type declarations and there is no need to write semicolons (`;`) between statements.
 
 
 ```kotlin
