@@ -12,7 +12,7 @@ Fragments were initially created only to allow a portion of the interface to be 
 Nowadays, a fragment is considered a bundle of application logic and user interface that provides certain functionality and can be reused within an application. 
 A typical example of this is the login fragment, which provides a login interface and also checks the user’s credentials.
 
-> ![A login fragment](/images/05/login.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![A login fragment](/images/04/login.png){:style="display:block; margin-left:auto; margin-right:auto"}
 > *A login fragment.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
@@ -141,6 +141,14 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 ```
 
 Many fragments include a static method implementing the Factory design pattern so that instances of a given fragment can be generated based on input parameters. This method could perform different fragment initializations based on those parameters.
+
+## 4.3.1. Lifecycle of a fragment
+
+The lifecycle of a fragment has an intimate relationship with the supportFragmentManager. The supportFragmentManager is a general control of all fragments that are being used in our application. We can create the instance of a fragment at any time but, from the point of view of the system, the fragment does not exist (or have any state) until we add it to the supportFragmentManager.
+
+> ![Lifecycle of a fragment](/images/04/fragment-lifecycle.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Lifecycle of a fragment.*  
+> Source: [Android Developers](https://developer.android.com/guide/fragments/lifecycle) License: [CC BY 2.5](http://creativecommons.org/licenses/by/2.5/)
 
 
 
