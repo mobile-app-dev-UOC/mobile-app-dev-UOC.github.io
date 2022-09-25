@@ -118,4 +118,65 @@ val intent = Intent(this, ListActivity::class.java).apply {
 startActivity(intent)
 ```
 
+In the `onCreate` method of the target activity, we can retrieve the parameter value using the `get<type>Extra` methods from Intent that correspond to the corresponding type.
 
+```kotlin
+class ListActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityListBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityListBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val userId =  intent.getStringExtra(USER_ID_MESSAGE)
+        val iValue:Int =  intent.getIntExtra(PARAM_INT,0)
+        val aiValue: IntArray? = intent.getIntArrayExtra(PARAM_ARRAY_INT)
+        val pClass: LoggedInUserView? = intent.getParcelableExtra<LoggedInUserView>(PARAM_PARCEL_CLASS)
+   }
+}
+```
+
+Activities can return results to the activity that created them. These results are treated in the same way as the parameters we use to start running the activity. That is, we use inter-process communication, so we can pass basic types and parcelable classes.
+
+To receive a result, we need to register the activity. Access to the result is granted through a **contract**. Contracts were introduced to avoid having to overwrite the `onActivityResult` method. In the past, in this currently deprecated method, all responses were received from all the different activities that returned results. Then, we had to use conditional statements to determine which activity we were receiving results from, which made the code too complicated. This motivated the use of contracts.
+
+Android provides a [set of standard contracts](https://developer.android.com/reference/androidx/activity/result/contract/ActivityResultContracts) that our apps can use. The most generic one is StartActivityForResult. Here is the code that needs to be added to the class that creates the activity:
+
+```kotlin
+var getResult  = registerForActivityResult(
+    ActivityResultContracts.StartActivityForResult()) {
+    if (it.resultCode == Activity.RESULT_OK) {
+        val value = it.data?.getParcelableExtra<AddItemResult>(PARAM_PARCEL_CLASS)
+    }
+}
+
+val intent = Intent(this, AddItem::class.java)
+getResult.launch(intent)
+```
+
+In the activity that computes the results, when it is done we need to record the results (using the corresponding data type) and finish the activity.
+
+```kotlin
+val l:AddItemResult = AddItemResult("name", "text","content")
+val intent = Intent()
+intent.putExtra(PARAM_PARCEL_CLASS, l)
+this.setResult(Activity.RESULT_OK,intent)
+finish()
+```
+
+In the code above the AddItemResult statement is implemented as follows:
+
+```kotlin
+@Parcelize
+data class AddItemResult(val name: String, val text: String, val url_content: String): Parcelable
+```
+
+>**Learn more:**
+>In a lot of documentation, we talk about the possibility of using the Singleton design pattern to have a single model shared by all activities. The Singleton pattern, for those unfamiliar with it, can be viewed as a kind of global variable. It appears that this approach should work in theory, but it does not always work in practice.
+
+>Let us imagine that we have created the variable in the main activity of our app. We then launch other activities that can access this variable seamlessly. 
+
+>When the Android operating system runs out of memory, it can decide to destroy activities to free resources. It usually starts with those activities that are not in the foreground. Then, if you destroy the activity that created our global variable, we will no longer be able to access it. Some authors provide solutions to this problem by recording the value of the singleton in permanent storage after each update. Nevertheless, this causes performance issues.
+
+>This approach is sometimes combined with the ViewModels that will be introduced in [Section 4.2](/content/04/02-viewmodels). However, this version also suffers from the previously mentioned issues.
