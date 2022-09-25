@@ -139,17 +139,17 @@ interface HandleCommand {
 }
 ```
 
-Now we indicate that our AdvancedElement class is going to implement this interface. We always place interfaces after the primary constructor and class. We need to implement the properties and methods that the Interface requires. If we do not implement all of them, we will receive an error message when compiling the code
+Now we indicate that our AdvancedElement class is going to implement this interface. We always place interfaces after the primary constructor and class. We need to implement the properties and methods that the Interface requires. If we do not implement all of them, we will receive an error message when compiling the class.
 
 ```kotlin
 class AdvancedElement(name:String,age:Int) : Element(name), HandleCommand 
 {
     override var listCommands: List<String>
-        get() = ALL("Not yet implemented")
+        get() = TODO("Not yet implemented")
         set(value) {}
 
     override fun SendCommand(command: String) {
-        ALL("Not yet implemented")
+        TODO("Not yet implemented")
     }
 }
 ```
