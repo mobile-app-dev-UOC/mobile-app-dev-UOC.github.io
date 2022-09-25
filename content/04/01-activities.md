@@ -174,8 +174,62 @@ data class AddItemResult(val name: String, val text: String, val url_content: St
 
 >**Learn more:**
 >In a lot of documentation, we talk about the possibility of using the [Singleton design pattern](https://en.wikipedia.org/wiki/Singleton_pattern) to have a single model shared by all activities. The Singleton pattern, for those unfamiliar with it, can be viewed as a kind of global variable. It appears that this approach should work in theory, but it does not always work in practice.
+>
 >Let us imagine that we have created the variable in the main activity of our app. We then launch other activities that can access this variable seamlessly. 
+>
 >When the Android operating system runs out of memory, it can decide to destroy activities to free resources. It usually starts with those activities that are not in the foreground. Then, if you destroy the activity that created our global variable, we will no longer be able to access it. Some authors provide solutions to this problem by recording the value of the singleton in permanent storage after each update. Nevertheless, this causes performance issues.
+>
 >This approach is sometimes combined with the ViewModels that will be introduced in [Section 4.2](/content/04/02-viewmodels). However, this version also suffers from the previously mentioned issues.
+
+## 4.1.3. Creating activities from other applications
+
+In addition to creating our own activities, we may also use a system activity or an activity from another application to perform specific tasks required by our application.
+
+The most common example is accessing photos to use an image provided by the user. To this end, we create an intent but, in the intent, instead of specifying a class of our application, we indicate a type and an action. The activities that have been recorded with that type of action in the system will respond to our request.
+
+```kotlin
+val intent = Intent()
+intent.type = "image/*"
+intent.action = Intent.ACTION_GET_CONTENT
+getResult.launch(intent)
+```
+
+To collect the result, we will have created the corresponding contract:
+
+```kotlin
+ar getResult  = registerForActivityResult(
+   ActivityResultContracts.StartActivityForResult()) {
+   val value = it.data?.getData()
+   val inputStream: InputStream? = this.getContentResolver().openInputStream(value!!)
+   val bitmap = BitmapFactory.decodeStream(inputStream)
+   binding.itemImageNew.setImageBitmap(bitmap)
+}
+```
+
+## 4.1.4. Completing activities
+
+Activities are terminated with a call to the `finish` method. If the activity should return results, it is important to remember that the return value must be set before invoking `finish`.
+
+```kotlin
+val l:AddItemResult = AddItemResult("name1", "text1","content1")
+val intent = Intent()
+intent.putExtra(PARAM_PARCEL_CLASS, l)
+
+this.setResult(Activity.RESULT_OK,intent)
+finish()
+```
+
+## 4.1.5. Opening activities in a new task
+
+
+Android systems with API version 24 or later that support multitasking allow opening an activity in a new task.
+
+```kotlin
+val intent = Intent(this, ScrollingActivity::class.java)
+if(this.isInMultiWindowMode()) {
+   intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+}
+startActivity(intent)
+```
 
 
