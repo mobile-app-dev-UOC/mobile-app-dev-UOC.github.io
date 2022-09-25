@@ -173,10 +173,9 @@ data class AddItemResult(val name: String, val text: String, val url_content: St
 ```
 
 >**Learn more:**
->In a lot of documentation, we talk about the possibility of using the Singleton design pattern to have a single model shared by all activities. The Singleton pattern, for those unfamiliar with it, can be viewed as a kind of global variable. It appears that this approach should work in theory, but it does not always work in practice.
-
+>In a lot of documentation, we talk about the possibility of using the [Singleton design pattern](https://en.wikipedia.org/wiki/Singleton_pattern) to have a single model shared by all activities. The Singleton pattern, for those unfamiliar with it, can be viewed as a kind of global variable. It appears that this approach should work in theory, but it does not always work in practice.
 >Let us imagine that we have created the variable in the main activity of our app. We then launch other activities that can access this variable seamlessly. 
-
 >When the Android operating system runs out of memory, it can decide to destroy activities to free resources. It usually starts with those activities that are not in the foreground. Then, if you destroy the activity that created our global variable, we will no longer be able to access it. Some authors provide solutions to this problem by recording the value of the singleton in permanent storage after each update. Nevertheless, this causes performance issues.
-
 >This approach is sometimes combined with the ViewModels that will be introduced in [Section 4.2](/content/04/02-viewmodels). However, this version also suffers from the previously mentioned issues.
+
+
