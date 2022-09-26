@@ -18,6 +18,6 @@ On top of this basic structure, Google publishes [Material Design](https://mater
 > *View and ViewGroup class hierarchy.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-Interfaces are typically deployed declaratively using XML files called layouts. These layouts can be used to create view groups or a particular view. In addition, it is also possible to create items dynamically using Kotlin.
+Interfaces are typically deployed declaratively using XML files called **layouts**. These layouts can be used to create view groups or a particular view. In addition, it is also possible to create items dynamically using Kotlin.
 
 {:toc:}
