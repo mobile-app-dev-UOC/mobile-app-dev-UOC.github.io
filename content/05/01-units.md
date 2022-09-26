@@ -42,8 +42,8 @@ These are the units commonly used in application development.
 
 These device-independent units allow us to design interfaces that are proportionally rescaled based on the density of the different screens. This makes interfaces display correctly on devices with different densities.
 
-> ![Two squares measuring the same amount of device-independent pixels.](/images/05/square-device-independent.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
-> *Two squares measuring the same amount of device-independent pixels.*  
+> ![Two squares measuring the same amount of density-independent pixels.](/images/05/square-device-independent.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Two squares measuring the same amount of density-independent pixels.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 ## 5.1.3. Physical units
