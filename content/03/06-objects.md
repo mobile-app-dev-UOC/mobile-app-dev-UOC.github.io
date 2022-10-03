@@ -11,7 +11,7 @@ As we have already mentioned, all values in Kotlin are considered objects. Below
 
 ## 3.6.1. Basic syntax
 
-In Kotlin classes are identified by the keyword `class`. In the following sections we will extend this initial definition with new features.
+In Kotlin, classes are identified by the keyword `class`. In the following sections we will extend this initial definition with new features.
 
 ```kotlin
 class Element {
@@ -32,7 +32,7 @@ class Element(name: String) {
 }
 ```
 
-We also can define secondary constructors with different number of parameters.
+We can also define secondary constructors with different number of parameters.
 
 To define them, we use the keyword `constructor`. We call the primary constructor first, and then our secondary constructor runs. If we do not want to run the primary constructor, we can leave it empty and run it anyway. 
 
@@ -77,7 +77,7 @@ Keyword `field` is used to represent the field we want to modify. Notice that th
 
 ## 3.6.5. Inheritance
 
-Kotlin enables simple inheritance between classes. That is, a class can have at most one parent class. To allow inheritance, in the parent class you need to add the `open` keyword in front of the name.
+Kotlin enables simple inheritance between classes. That is, a class can have at most one parent class. To allow inheritance, in the parent class you need to add the `open` keyword before the name.
 
 ```kotlin
 open class Element(name: String)

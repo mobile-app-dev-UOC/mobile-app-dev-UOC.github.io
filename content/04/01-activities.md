@@ -16,7 +16,7 @@ The lifecycle of an activity describes the current state of an activity and how 
 Broadly speaking, an activity can be in four different states:
 - **Foreground activity:** it is on the top of the stack, i.e., the activity is running.
 - **Activity paused:** the activity has lost focus, but it is still visible.
-- **Activity stopped:** the activity has been replaced by another one and below it in the stack.
+- **Activity stopped:** the activity has been replaced by another one and is below it in the stack.
 - **Activity completed or dead:** the activity is paused or stopped, and the system ends or kills it. 
 
 The following image shows a schematic of the lifecycle of an activity:
@@ -155,7 +155,7 @@ val intent = Intent(this, AddItem::class.java)
 getResult.launch(intent)
 ```
 
-In the activity that computes the results, when it is done we need to record the results (using the corresponding data type) and finish the activity.
+In the activity that computes the results, when it is done, we need to record the results (using the corresponding data type) and finish the activity.
 
 ```kotlin
 val l:AddItemResult = AddItemResult("name", "text","content")

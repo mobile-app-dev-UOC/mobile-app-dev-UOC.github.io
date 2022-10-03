@@ -79,7 +79,7 @@ val list = listOf("123", "12", "1234")
 val sorted = list.sortedBy { it.length }
 ```
 
-Using `sortedBy` we are always using a numerical order. Nevertheless, we may want to define our sorting criterion and therefore our own ordering. To do this, we must define a class and within it we must implement a static method called `compare`. Static methods are explained in more detail in [Section 3.6.8](/content/03/06-objects).
+Using `sortedBy` we are always using a numerical order. Nevertheless, we may want to define our sorting criterion and, therefore, our own ordering. To do this, we must define a class and, within it, we must implement a static method called `compare`. Static methods are explained in more detail in [Section 3.6.8](/content/03/06-objects).
 
 ### 3.4.3.2. Set
 
@@ -107,7 +107,7 @@ for ((k, v) in items) {
 
 Nevertheless, there is no information about the order in which `<key, value>` pairs will be visited in this traversal. 
 
-### 3.4.4. Enumerated typs
+### 3.4.4. Enumerated types
 
 Enumerations are special types which can only have a finite and predefined set of values. The definition and usage of enumerations is similar to other programming languages.
 

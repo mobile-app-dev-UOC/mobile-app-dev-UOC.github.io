@@ -50,7 +50,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 ```
 
-This way, we no longer directly assign the selected image to the interface but instead assign it to the model. The interface will be modified automatically by the previous code.
+This way, we no longer directly assign the selected image to the interface but, instead, we assign it to the model. The interface will be automatically modified by the previous code.
 
 ```kotlin
 var getResult  = registerForActivityResult(

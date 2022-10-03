@@ -159,7 +159,7 @@ A fragment passes through the following states:
 
 ## 4.3.2. Creating a fragment
 
-We can insert a fragment statically by adding it to the XML layout of our activity. Using this approach, the fragment will not be available in the fragment stack that will be presented in the next. To achieve this, we use the `fragment` label and in the `name` attribute we indicate the class of the fragment we want to instantiate.
+We can insert a fragment statically by adding it to the XML layout of our activity. Using this approach, the fragment will not be available in the fragment stack that will be described in the next Section 4.3.3. To achieve this, we use the `fragment` label and in the `name` attribute we indicate the class of the fragment we want to instantiate.
 
 ```xml
 <LinearLayout
@@ -228,7 +228,7 @@ The transaction concept is important because we can make and undo many changes a
 
 ## 4.3.3. Handling the fragment stack
 
-In the previous Section, we have already added the fragment to the system and we have already viewed it. However, if the app user uses the Android "back" button the fragments will not behave like Activities. That is, they will not disappear and appear in the reverse order, in the form of a stack. Sometimes we want some fragments to behave using the back button just like they were activities.
+In the previous Section, we have already added the fragment to the system and we have already viewed it. However, if the app user uses the Android "back" button, the fragments will not behave like Activities. That is, they will not disappear and appear in the reverse order, in the form of a stack. Sometimes we want some fragments to behave using the back button just like if they were activities.
 
 To achieve this, we included the `addToBackStack` method in the transaction that adds the transaction to the stack.
 
@@ -259,7 +259,7 @@ supportFragmentManager.commit {
 
 `replace` differs from `add` in that the fragment occupied by the placeholder goes into a destroyed state before creating the new one.
 
-Transactions can be extracted from the stack programmatically if for some reason we are not interested in something added to the stack being accessible simply by pressing the "back" button. To do this we use:
+Transactions can be extracted from the stack programmatically, if for some reason we are not interested in something added to the stack being accessible simply by pressing the "back" button. To do this we use:
 
 ```kotlin
 supportFragmentManager.popBackStack()

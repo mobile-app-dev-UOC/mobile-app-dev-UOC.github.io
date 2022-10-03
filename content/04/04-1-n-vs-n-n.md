@@ -22,7 +22,7 @@ One of the main reasons for having activities was allowing the operating system 
 App development now looks more like app development for Windows, macOS, Linux, or even the same iPhone iOS system. Google often bets on few activities, even reaching a single activity and a set of fragments. This provides several advantages:
 
 - *Information sharing:*
-    -	We can use the viewModel because it can be shared between all fragments and the activity.
+    -	We can use the ViewModel because it can be shared between all fragments and the activity.
     -	We can use the Singleton design pattern without problems.
 
 - *Design benefits:* Interface designers often request that the brand graphic image takes precedence over Google’s design guides. They also ask for smooth effects and transitions.
