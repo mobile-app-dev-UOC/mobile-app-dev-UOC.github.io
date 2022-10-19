@@ -75,7 +75,7 @@ In the first element (`text1`, in red), we specify that the upper left corner sh
        app:layout_constraintTop_toTopOf="parent" />
 ```
 
-The second element ('text2', in lavender) should be aligned with the upper right corner of our parent.
+The second element (`text2`, in lavender) should be aligned with the upper right corner of our parent.
 
 Finally, the third element should fill all the available space. To achieve this, we align the left corner with the right corner of the first element and then align the right corner with the left corner of the second element.
 
@@ -293,5 +293,111 @@ We leave a margin of 20dp with respect to the element relative to which it has b
 	android:layout_marginLeft="20dp"
 ```
 
-In the View used an example, which paints a rectangle in red, we can see how to position an component below the component with the identifier `"@+id/text_rel2"` and aligned to the right of the parent. We also leave a margin of 10dp with respect to the component `"@+id/text_rel2"` and a margin of 20dp with respect to the right margin.
+In the View used an example, which paints a rectangle in red, we can see how to position an component below the component with the identifier `"@+id/text_rel2"` and aligned to the right of the parent. We also leave a margin of 10dp with respect to the component `"@+id/text_rel2"` and a margin of 20dp with respect to the right border.
 
+```xml
+	android:layout_below="@+id/text_rel2"
+	android:layout_alignParentRight="true"
+	android:layout_marginTop="10dp"
+	android:layout_marginRight="20dp"
+```
+
+The TextView with `@+id/text_rel3` is aligned with the bottom edge of the parent. A margin of 100dp with respect to that bottom edge is defined.
+
+```xml
+	android:layout_alignParentBottom="true"
+	android:layout_marginBottom="100dp"
+```
+
+> ![An example of a RelativeLayout.](/images/05/relative-layout.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> *An example of a RelativeLayout.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+---
+
+## FrameLayout
+
+The FrameLayout is typically used to design the interface of a view that has a fixed size.
+
+In a FrameLayout, the position of each element is defined with respect to the top lefet. With this type of positioning, it is very easy to build fixed size interfaces.
+
+In the example below, we will position two squares, one on top of the other.
+
+> ![Target FrameLayout we need to design.](/images/05/frame-layout.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> *ATarget FrameLayout we need to design.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+```xml
+<FrameLayout
+   android:layout_width="match_parent"
+   android:layout_height="match_parent">
+
+   <View
+       android:layout_below="@+id/text_rel2"
+       android:layout_alignParentRight="true"
+       android:layout_marginTop="20dp"
+       android:layout_marginLeft="20dp"
+       android:background="#ff0000"
+       android:layout_width="100dp"
+       android:layout_height="100dp"/>
+
+   <View
+       android:layout_below="@+id/text_rel2"
+       android:layout_alignParentRight="true"
+       android:layout_marginTop="40dp"
+       android:layout_marginLeft="40dp"
+       android:background="#00ff00"
+       android:layout_width="100dp"
+       android:layout_height="100dp"/>
+
+</FrameLayout>
+```
+
+---
+
+## TableLayout
+
+The TableLayout organizes the contents into rows and columns. Rows are represented by the `TableRow` tag. Meanwhile, columns are usually the Views, as in our TextView example.
+
+To set the same width for all the columns of the table, we must set the same value for  `android:layout_weight`. Columns with a higher `android:layout_weight` will use more space. 
+
+
+```xml
+<TableLayout
+   android:layout_width="match_parent"
+   android:layout_height="match_parent">
+   <TableRow android:layout_width="match_parent">
+       <TextView android:text="C1"  android:layout_weight="1"/>
+       <TextView android:text="C2"  android:layout_weight="1"/>
+       <TextView android:text="C3"  android:layout_weight="1"/>
+   </TableRow>
+   <TableRow android:layout_width="match_parent">
+       <TextView android:text="v1"  android:layout_weight="1"/>
+       <TextView android:text="v2"  android:layout_weight="1"/>
+       <TextView android:text="v3"  android:layout_weight="1"/>
+   </TableRow>
+</TableLayout>
+```
+
+We can also assign a fixed value to the width of a column using the `width` attribute.
+
+```xml
+<TableLayout
+   android:layout_width="match_parent"
+   android:layout_height="match_parent">
+   <TableRow android:layout_width="match_parent">
+       <TextView android:text="C1"  android:width="50dp"/>
+       <TextView android:text="C2"  android:layout_weight="1"/>
+       <TextView android:text="C3"  android:layout_weight="1"/>
+   </TableRow>
+   <TableRow android:layout_width="match_parent">
+       <TextView android:text="v1"  android:width="50dp"/>
+       <TextView android:text="v2"  android:layout_weight="1"/>
+       <TextView android:text="v3"  android:layout_weight="1"/>
+   </TableRow>
+</TableLayout>
+```
+
+> ![Examples of TableLayouts](/images/05/table-layout.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Examples of TableLayouts.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
