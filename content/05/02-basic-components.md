@@ -52,4 +52,61 @@ android:background="@color/design_default_color_background"
 
 ## TextView
 
+The TextView is the component that allows displaying text on the screen.  When the text exceeds the width of the TextView, if we have vertical space available, the text jumps to the next line. However, if we have not indicated `wrap_content` in the `height` property, the text will be cut off when we run out of space. 
 
+Text color:
+```xml
+	android:textColor="#ffffff"
+```
+
+Horizontal text alignment: centered, left, right
+```xml
+android:gravity="center_horizontal"
+android:gravity="left"
+android:gravity="right"
+```
+
+Vertical alignment
+```xml
+	android:gravity="center_vertical"
+```
+
+Assigning horizontal and vertical alignment at the same time
+```xml
+	android:gravity="center"
+```
+
+Justified text: 
+```xml
+	android:justificationMode="inter_word"
+```
+Font selection:
+```xml
+	android:fontFamily="sans-serif-black"
+```
+
+Font size:
+```xml
+	android:textSize="14dp"
+```
+Line size:
+```xml
+	android:lineSpacingMultiplier="1.5"
+	android:lineSpacingExtra="10dp"
+```
+
+In Android, the concept of “line size” does not exist as such. The line height can be calculated as: `Line Size = android:textSize*android:lineSpacingMultiplier + android:lineSpacingExtra`
+
+Adding an extra space is most commonly done using only `android:lineSpacingExtra`.
+
+
+Adding fonts:
+To add a typeface, we have to create an Android resource folder within the `res` folder of our project and select `font` as the type of resource. Then, we can add our fonts by copying them into this folder. 
+
+Leaving a margin around the text:
+```xml
+	android:padding="10dp"
+```
+
+Using formatted text:
+We can include different styles in a text using  SpannableString and classes like ForegroundColorSpan or BackgroundColorSpan classes. These classes affect a range of characters within the SpannableString.
