@@ -300,7 +300,7 @@ This option shows the character “@” on the keyboard.
 
 This option allows text that occupies more than one line.  If nothing is indicated, the cursor is placed in the middle of the EditText height.
 
-For the text to start at the top of a view, it is necessary to add `android:gravity="top"`.
+To make the text start at the top of a view, it is necessary to add `android:gravity="top"`.
 
 More than one type can be assigned to achieve effects such as auto-complete, ... For example, if we indicate
 
@@ -332,7 +332,7 @@ binding.switch1.setOnClickListener {
 We can create effects on the backgrounds of any View by creating a resource file of type `drawable`  with root element `shape` and creating the required shape. In the example below, we select a color and indicate that the corners will be rounded.
 
 ```xml
-shape xmlns:android="http://schemas.android.com/apk/res/android">
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
    xmlns:android="http://schemas.android.com/apk/res/android"
    android:shape="rectangle">
    <corners android:radius="20dp" />
