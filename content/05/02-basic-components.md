@@ -50,6 +50,8 @@ android:background="#ff0000"
 android:background="@color/design_default_color_background"
 ```
 
+---
+
 ## TextView
 
 The TextView is the component that allows displaying text on the screen.  When the text exceeds the width of the TextView, if we have vertical space available, the text jumps to the next line. However, if we have not indicated `wrap_content` in the `height` property, the text will be cut off when we run out of space. 
@@ -129,6 +131,8 @@ Finally, we can upload text in HTML format using `Html.fromHtml`. This method co
 binding.text1.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>",
 	Html.FROM_HTML_MODE_COMPACT))
 ```
+
+---
 
 ## ImageView
 
@@ -210,6 +214,7 @@ It is important to remember that we must declare that our application should hav
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
 ```
+---
 
 ## Button
 
@@ -263,4 +268,84 @@ Now we assign the selector to our button using the `src` attribute:
    android:layout_height="150dp"/>
 ```
 
+---
+
 ## Input components
+
+There are many components to allow data entry. In the following, we discuss the most frequently used ones: EditText and Switch. 
+
+EditText has a very important attribute called `inputType`. This attribute allows you to perform a series of validations automatically. It also controls the keyboard displayed by Android:
+
+```xml
+	android:inputType="number"
+```
+
+With this option, the EditText only allows numeric characters and displays the numeric keypad.
+
+```xml
+	android:inputType="textPassword"
+```
+
+This option hides the characters that the user enters.
+
+```xml
+	android:inputType="textEmailAddress"
+```
+
+This option shows the character “@” on the keyboard.
+
+```xml
+	android:inputType="textMultiLine"
+```
+
+This option allows text that occupies more than one line.  If nothing is indicated, the cursor is placed in the middle of the EditText height.
+
+For the text to start at the top of a view, it is necessary to add `android:gravity="top"`.
+
+More than one type can be assigned to achieve effects such as auto-complete, ... For example, if we indicate
+
+```xml
+	android:inputType="textMultiLine|textAutoCorrect"
+```
+
+the component will allow multi-line inputs and it will correct spelling errors in real time.
+
+It is important to always assign a background to the EditText:
+
+```xml
+	android:background="@android:drawable/edit_text"
+```
+
+Regarding the Switch component, it can be in two states: true or false. It is often used to let the user select it a feature is required. With the `isChecked` method we can determine the status of the Switch.
+
+```kotlin
+binding.switch1.setOnClickListener {
+   Toast.makeText(this, binding.switch1.isChecked().toString(), Toast.LENGTH_SHORT)
+   	.show()
+}
+```
+
+---
+
+## Shapes
+
+We can create effects on the backgrounds of any View by creating a resource file of type `drawable`  with root element `shape` and creating the required shape. In the example below, we select a color and indicate that the corners will be rounded.
+
+```xml
+shape xmlns:android="http://schemas.android.com/apk/res/android">
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   android:shape="rectangle">
+   <corners android:radius="20dp" />
+   <solid
+       android:color="#00eeff" />
+</shape>
+```
+
+Then we assign this drawable to the background of the item we want:
+
+```xml
+<View
+   android:layout_width="0dp"
+   android:layout_height="50dp"
+   android:background="@drawable/demo_shape" />
+```
