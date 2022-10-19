@@ -126,7 +126,8 @@ In this example, the text would be set to `HelloSpannableString` with the charac
 
 Finally, we can upload text in HTML format using `Html.fromHtml`. This method converts from HTML to text with Android styles. Care must be taken because not all HTML tags are transformed:
 ```kotlin
-binding.text1.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>",Html.FROM_HTML_MODE_COMPACT))
+binding.text1.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>",
+	Html.FROM_HTML_MODE_COMPACT))
 ```
 
 ## ImageView
