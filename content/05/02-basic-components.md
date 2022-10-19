@@ -152,3 +152,115 @@ Centers the image in the defined space and cuts out what comes out.
 > *fitCenter vs centerCrop*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
+A custom scaling matrix can be used to define a scaling that is not supported by the system.
+
+```xml
+	android:scaleType="matrix"
+```
+
+There are two ways to upload an image in gif format:
+
+
+1. Using a library like [Glide](https://github.com/bumptech/glide). To do this, we add a dependency to the library in the Gradle of the app.
+
+```gradle
+implementation ("com.github.bumptech.glide:glide:4.11.0") {
+   exclude group: "com.android.support"
+}
+```
+We can now upload the gif using an ImageView that we have defined in the layout and acts as a placeholder.
+
+```kotlin
+Glide.with(this).load(R.drawable.arrow1).into(binding.image);
+```
+
+2. API 28 and above include native support for loading many new image formats. This support is achieved using the AnimatedImageDrawable class.
+
+```kotlin
+GlobalScope.launch {
+  
+   val drawable = ImageDecoder.decodeDrawable(source, gfgListner)
+   GlobalScope.launch(Dispatchers.Main) {
+
+       binding.image.setImageDrawable(drawable)
+       if (drawable is AnimatedImageDrawable) {
+           (drawable as AnimatedImageDrawable).start()
+       }
+   }
+
+}
+```
+
+Decoding should be implemented using Kotlin coroutines, because image decoding can be resource intensive and we should not pause the main thread. We will explain how to use coroutines in [Section 7.7](/content/07/07-functional-programming).
+
+>**Learn more:**
+> If we are using AnimatedImageDrawable and we cannot see a GIF image in the Android Studio emulator, the problem may be the lack of hardware acceleration. In this case, we should add the following attribute to the manifest file of our application in the activity where we are going to use the AnimatedImageDrawable:
+> ```xml
+	android:hardwareAccelerated="false"
+```
+
+A library that is often used extensively to download images from a remote server is [Picasso](https://square.github.io/picasso/). Using this library, we can download an image from the Internet with a single line of code:
+
+```kotlin
+Picasso.with(this).load(“url_image").into(binding.image);
+```
+
+It is important to remember that we must declare that our application should have access to the internet in the manifest file.
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+## Button
+
+The Button is the component designed to perform an action when pressed.
+
+```xml
+<Button
+   android:id="@+id/btn"
+   android:text="START"
+   android:layout_width="150dp"
+   android:layout_height="150dp"
+/>
+```
+
+To know when a user clicks on the button, we assign the value of the code we want to run to the property `setOnClickListen`.
+
+```kotlin
+binding.btn.setOnClickListener {
+   Toast.makeText(this, "click.", Toast.LENGTH_SHORT).show()
+}
+```
+
+Any item derived from View can be pressed, for example, an image:
+
+```kotlin
+binding.image.setOnClickListener {
+   Toast.makeText(this, "image.", Toast.LENGTH_SHORT).show()
+}
+```
+
+The only difference is that the button performs the visual tapping effect. To use a button that implements the tapping effect but with images instead of text, we must use the ImageButton component. To define the images of the different statuses of the button, we should create a new resource file of type Drawable and Root element (`selector`).
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+   <item android:state_pressed="true"
+       android:drawable="@drawable/moon" /> <!-- pressed -->
+   <item android:state_focused="true"
+       android:drawable="@drawable/sun" /> <!-- focused -->
+   <item android:drawable="@drawable/sun" /> <!-- default -->
+</selector>
+```
+
+Now we assign the selector to our button using the `src` attribute:
+
+```xml
+<ImageButton
+   android:id="@+id/btn"
+   android:src="@drawable/selector_btn"
+   android:layout_width="150dp"
+   android:layout_height="150dp"/>
+```
+
+## Input components
