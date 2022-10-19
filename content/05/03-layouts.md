@@ -89,7 +89,7 @@ Finally, the third element should fill all the available space. To achieve this,
   app:layout_constraintTop_toTopOf="parent" />
 ```
 
-> ![A screenshot of the proposed ConstraintLayout.](/images/05/constraint-layout){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![A screenshot of the proposed ConstraintLayout.](/images/05/constraint-layout.png){:style="display:block; margin-left:auto; margin-right:auto"}
 > *A screenshot of the proposed ConstraintLayout.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
@@ -128,7 +128,7 @@ In the example below we have two ConstraintLayout children who inherit from a pa
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 
-> ![A ConstraintLayout where an ImageView is below other components.](/images/05/constraint-layout2){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![A ConstraintLayout where an ImageView is below other components.](/images/05/constraint-layout2.png){:style="display:block; margin-left:auto; margin-right:auto"}
 > *A ConstraintLayout where an ImageView is below other components.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
@@ -144,4 +144,154 @@ If we want to center an element we need to indicate constraints in a somewhat co
 >**Learn more:**
 >It is possible to make a component become invisible with a position constraint. For example, consider the following constraint: `app:layout_constraintleft_toRightOf="parent"`.
 If the parent is the main container and a component places its left border in the rightmost border of the container, the component will be outside the container (out of bounds to the right) and therefore the component will not be visible.
+
+---
+
+## LinearLayout
+
+In this type of layout, components are arranged in a linear order in a vertical or horizontal direction.
+
+```xml
+<LinearLayout
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"
+   android:orientation="vertical"
+   android:gravity="top"
+   >
+
+
+   <EditText
+       android:id="@+id/editTextNumber"
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:layout_weight="1"
+       android:ems="10"
+       android:background="@android:drawable/edit_text"
+       android:inputType="number" />
+
+   <EditText
+       android:id="@+id/editTextPersonName"
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:ems="10"
+       android:layout_weight="1"
+       android:inputType="textEmailAddress"
+       android:background="@android:drawable/edit_text"
+       android:text="" />
+
+   <EditText
+       android:id="@+id/editTextPassword"
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:layout_weight="1"
+       android:ems="10"
+       android:background="@android:drawable/edit_text"
+       android:inputType="textPassword" />
+
+
+   <EditText
+       android:id="@+id/editTextMultiline"
+       android:layout_width="match_parent"
+       android:layout_height="460dp"
+       android:layout_weight="1"
+       android:ems="10"
+       android:gravity="top"
+       android:lineSpacingExtra="10dp"
+       android:background="@android:drawable/edit_text"
+       android:inputType="textMultiLine|textAutoCorrect" />
+
+</LinearLayout>
+```
+
+If we specity a `match_parent` height, the available height will be distributed proportionally according to the value of the attribute `android:layout_weight` of each element.
+
+The `android:orientation="vertical"` attribute of LinearLayout indicates that in this case the components have to be stacked vertically. 
+
+---
+
+## RelativeLayout
+
+Elements can be positioned with respect to the parent or another element in the layout. The z-order is still defined by the order in which the elements are defined within the layout.
+
+```xml
+<RelativeLayout
+   android:layout_width="match_parent"
+   android:layout_height="match_parent">
+
+   <ImageView
+       android:id="@+id/image"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:src="@drawable/moon"
+       android:scaleType="centerCrop"
+       android:background="#ff0000"
+       />
+
+
+   <TextView
+       android:id="@+id/text_rel1"
+       android:layout_width="50dp"
+       android:layout_height="50dp"
+       android:background="#ffffff"
+       android:color="#000000"
+       android:padding="6dp"
+       android:gravity="center"
+       android:layout_marginTop="20dp"
+       android:layout_alignParentLeft="true"
+       android:layout_marginLeft="20dp"
+       android:text="23:45"
+       />
+
+       <TextView
+           android:id="@+id/text_rel2"
+           android:layout_width="50dp"
+           android:layout_height="50dp"
+           android:background="#ffffff"
+           android:color="#000000"
+           android:padding="6dp"
+           android:gravity="center"
+           android:layout_alignParentRight="true"
+           android:layout_marginTop="20dp"
+           android:layout_marginRight="20dp"
+           android:text="LIVE"
+           />
+
+       <View
+           android:layout_below="@+id/text_rel2"
+           android:layout_alignParentRight="true"
+           android:layout_marginTop="10dp"
+           android:layout_marginRight="20dp"
+           android:background="#ff0000"
+           android:layout_width="50dp"
+           android:layout_height="10dp"/>
+
+   <TextView
+       android:id="@+id/text_rel3"
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:background="#ffffff"
+       android:color="#000000"
+       android:padding="6dp"
+       android:layout_alignParentBottom="true"
+       android:layout_marginBottom="100dp"
+       android:text="The Moon is Earth's only natural satellite. At about one-quarter the diameter of Earth "
+       />
+
+
+</RelativeLayout>
+```
+
+In this example we can see how the ImageView is placed below everything as it is defined first.
+
+The TextView with `id="@+id/text_rel1"` is positioned to the left of the parent by means of
+`android:layout_alignParentLeft="true"`. The parent in this case is the RelativeLayout itself. By default, elements are aligned to the beginning of the parent. 
+
+We leave a margin of 20dp with respect to the element relative to which it has been positioned (in this case, the parent).
+
+```xml
+	android:layout_marginTop="20dp"
+	android:layout_marginLeft="20dp"
+```
+
+In the View used an example, which paints a rectangle in red, we can see how to position an component below the component with the identifier `"@+id/text_rel2"` and aligned to the right of the parent. We also leave a margin of 10dp with respect to the component `"@+id/text_rel2"` and a margin of 20dp with respect to the right margin.
 
