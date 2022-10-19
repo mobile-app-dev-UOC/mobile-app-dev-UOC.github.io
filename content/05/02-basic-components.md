@@ -54,59 +54,95 @@ android:background="@color/design_default_color_background"
 
 The TextView is the component that allows displaying text on the screen.  When the text exceeds the width of the TextView, if we have vertical space available, the text jumps to the next line. However, if we have not indicated `wrap_content` in the `height` property, the text will be cut off when we run out of space. 
 
-Text color:
+- Text color:
 ```xml
 	android:textColor="#ffffff"
 ```
 
-Horizontal text alignment: centered, left, right
+- Horizontal text alignment: centered, left, right
 ```xml
 android:gravity="center_horizontal"
 android:gravity="left"
 android:gravity="right"
 ```
 
-Vertical alignment
+- Vertical alignment
 ```xml
 	android:gravity="center_vertical"
 ```
 
-Assigning horizontal and vertical alignment at the same time
+- Assigning horizontal and vertical alignment at the same time
 ```xml
 	android:gravity="center"
 ```
 
-Justified text: 
+- Justified text: 
 ```xml
 	android:justificationMode="inter_word"
 ```
-Font selection:
+- Font selection:
 ```xml
 	android:fontFamily="sans-serif-black"
 ```
 
-Font size:
+- Font size:
 ```xml
 	android:textSize="14dp"
 ```
-Line size:
+- Line size:
 ```xml
 	android:lineSpacingMultiplier="1.5"
 	android:lineSpacingExtra="10dp"
 ```
 
-In Android, the concept of “line size” does not exist as such. The line height can be calculated as: `Line Size = android:textSize*android:lineSpacingMultiplier + android:lineSpacingExtra`
+In Android, the concept of “line size” does not exist as such. The line height can be calculated as: `LineSize = android:textSize*android:lineSpacingMultiplier + android:lineSpacingExtra`
 
-Adding an extra space is most commonly done using only `android:lineSpacingExtra`.
+- Adding an extra space is most commonly done using only `android:lineSpacingExtra`.
 
-
-Adding fonts:
+- Adding fonts:
 To add a typeface, we have to create an Android resource folder within the `res` folder of our project and select `font` as the type of resource. Then, we can add our fonts by copying them into this folder. 
 
-Leaving a margin around the text:
+- Leaving a margin around the text:
 ```xml
 	android:padding="10dp"
 ```
 
-Using formatted text:
-We can include different styles in a text using  SpannableString and classes like ForegroundColorSpan or BackgroundColorSpan classes. These classes affect a range of characters within the SpannableString.
+- Using formatted text:
+We can include different styles in a text using class SpannableString and other classes like ForegroundColorSpan or BackgroundColorSpan. These classes affect a range of characters within the SpannableString.
+```kotlin
+val spannablecontent: SpannableString = SpannableString("Hello SpannableString")
+val foregroundColorSpan = ForegroundColorSpan(Color.GREEN)
+spannablecontent.setSpan(foregroundColorSpan, 6, 15, 
+	Spanned.SPAN_INCLUSIVE_EXCLUSIVE)
+binding.editTextMultiline.setText(spannablecontent)
+```
+
+In this example, the text would be set to `HelloSpannableString` with the characters forming the word `Spannable` printed in green).
+
+>**Learn more:**
+> The set of classes that represent the available styles can be found here: 
+> [https://developer.android.com/reference/kotlin/android/text/style/CharacterStyle](https://developer.android.com/reference/kotlin/android/text/style/CharacterStyle)
+
+
+Finally, we can upload text in HTML format using `Html.fromHtml`. This method converts from HTML to text with Android styles. Care must be taken because not all HTML tags are transformed:
+```kotlin
+binding.text1.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>",Html.FROM_HTML_MODE_COMPACT))
+```
+
+## ImageView
+
+ImageView is the class that displays an image. This class can display locally available images on our device but does not know how to download an image located on an external server. To download such external images, additional programming is required.
+
+The `scaleType` attribute is one of the most important attributes of this component. It indicates how the image should be scaled within the defined size.
+
+For example:
+```xml
+	android:scaleType="fitCenter"
+```
+
+Snaps the image into the defined space and centers it, while 
+
+```xml
+	android:scaleType="centerCrop"
+```
+Centers the image in the defined space and cuts out what comes out.
