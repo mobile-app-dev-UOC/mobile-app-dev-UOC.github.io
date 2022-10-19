@@ -146,3 +146,8 @@ Snaps the image into the defined space and centers it, while
 	android:scaleType="centerCrop"
 ```
 Centers the image in the defined space and cuts out what comes out.
+
+> ![fitCenter vs centerCrop](/images/05/image-view.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *fitCenter vs centerCrop*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
