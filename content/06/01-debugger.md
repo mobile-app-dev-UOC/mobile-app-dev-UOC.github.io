@@ -25,7 +25,7 @@ Running the debugger stops the execution at the first breakpoint and marks it wi
 
 Then, we can add variables to our watchlist so that we can inspect their value dynamically. 
 
-For example, we add the variable `u` which will initially be undefined. When we ask the debugger to step forward (execute the next line of code), an object of class User class is created and assigned to variable `u`, which then becomes defined. In the “Variables” area of the debugger, there is also a `this` variable that points to the class within which we are located. Using this variable, we can check the value of our class properties.
+For example, we add the variable `u` which will initially be undefined. When we ask the debugger to step forward (execute the next line of code), an object of class User class is created and assigned to variable `u`, which then becomes defined. In the `Variables` panel of the debugger, there is also a `this` variable that points to the class within which we are located. Using this variable, we can check the value of our class properties.
 
 > ![Examining the values of variables using the debugger.](/images/06/debugger-variables.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Examining the values of variables using the debugger.*  
@@ -35,7 +35,7 @@ We can also display complex objects to see the value of their properties. For in
 
 Each time we step forward, we can decide whether we want to execute the next line of the current method (*Step Over*) or whether we want to enter inside the method executed by the next statement (*Step Into*).
 
-In the bottom area there is a `Frames` section showing us the current execution stack.  All methods currently being executed are organized as a stack, with the innermost method at the top. Calling a new method adds it to the stack, while ending a method pops it from the top of the stack.
+In the bottom area there is a `Frames` panel showing us the current execution stack.  All methods currently being executed are organized as a stack, with the innermost method at the top. Calling a new method adds it to the stack, while ending a method pops it from the top of the stack.
 
 > ![Inspecting the execution stack.](/images/06/frames.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Inspecting the execution stack.*  
@@ -47,15 +47,15 @@ We are going to enter the `u.CalculateRisk()` method by pressing the `Step Into`
 > *Stepping into a method.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-After entering the method `CalculateRisk`, the `Frames` section now displays that we are inside the method.
+After entering the method `CalculateRisk`, the `Frames` panel now displays that we are inside the method.
 
 > ![The execution stack becomes updated after entering a method. ](/images/06/updated-frames.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *The execution stack becomes updated after entering a method.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-In the `Variables` section, we see that now variable `u` is not of type `User`, of type Int (the name `u` is reused as a local variable of the method. Moreover, `this` now points to the object of type User where we are executing the method `CalculateRisk`.
+In the `Variables` panel, we see that now variable `u` is not of type `User`, of type Int (the name `u` is reused as a local variable of the method. Moreover, `this` now points to the object of type User where we are executing the method `CalculateRisk`.
 
-Clicking on a previous row of the `Frames` section (see image below) retrieves the position within the source code and the values of the available variables in that method. 
+Clicking on a previous row of the `Frames` panel (see image below) retrieves the position within the source code and the values of the available variables in that method. 
 
 > ![Inspecting the code and variables in the methods that called the current method.](/images/06/back-frame.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Inspecting the code and variables in the methods that called the current method.*  
@@ -71,8 +71,36 @@ Pressing the `Stop` button stops the app and ends the debug session.
 
 One of the main goals of debug sessions is to check the code around breakpoints. We can view all active breakpoints by clicking on the button that gives us access to the breakpoint window. From this window, we can enable, disable or delete them.
 
-
 > ![Inspecting the list of active breakpoints.](/images/06/active-breakpoints.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Inspecting the list of active breakpoints.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+When we place a breakpoint in a method that responds to an event, the variable `this` is not available. Instead, new variables provide information about the source of the event.
+
+> ![A breakpoint in an event listener.](/images/06/event-breakpoint.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *A breakpoint in an event listener.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+As we see in the image above, in this case the event listener code has been invoked from system libraries. 
+
+>**Learn more:**
+>When debugging lambda expressions (see [Section 7.3](/content/07/03-lambda-functions)), accessing variables outside the lambda expression from inside it may cause errors. The easiest solution is replacing the lambda expression with a method call.
+
+When working with concurrent programming, the `Threads` panel of the debugger will become very important. A **thread** is a different execution flow within the same process or application. Each thread has its own stack.
+
+> ![The Threads panel.](/images/06/event-breakpoint.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *The `Threads` panel.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+We can tap on each thread and the environment will load the code that was being executed in the thread at the time.
+
+---
+
+## Logcat
+
+Within the Logcat window we can view both system messages and messages generated by our application.
+
+> ![Messages in Logcat.](/images/06/logcat.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Messages in Logcat.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
