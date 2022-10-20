@@ -19,7 +19,7 @@ LayoutManager Types:
 
 - *LinearLayoutManager*: Displays items in a list with vertical or horizontal scrolling.
 - *GridLayoutManager*: Displays items in a grid.
-- *StaggeredGridLayoutManager: Displays items in a staggered grid. Each item can have a different height and the size of rows is not adjusted using blank space. In fact, the concept of row disappears.
+- *StaggeredGridLayoutManager*: Displays items in a staggered grid. Each item can have a different height and the size of rows is not adjusted using blank space. In fact, the concept of row disappears.
 
 There are two types of scenarios:
 1.	We want to load a RecyclerView with contents that once uploaded will be static.
@@ -235,7 +235,7 @@ data.addItem(Item(333,"New flower",R.drawable.rose,"new item"))
 data.CommitChanges()
 ```
 
-In this code we make an update and an insertion.
+In this code, we make an update and an insertion.
 
 Please note that, in order to modify an item, we have to create a copy. If we do not do so, the item would maintain the same reference and the Diff would indicate that it has not been modified. Once all the modifications have been applied, we will execute the DataSource `CommitChanges` method so that the viewModel is informed of the existence of changes.
 
@@ -298,15 +298,15 @@ itemsListViewModel.itemsLiveData.observe(this, {
 
 Then we manually indicate, by means of `notifyItemChanged` and `notifyItemInserted`, the changes we have made. 
 
-In the example above our code is slightly forced. We should have implemented a change queue in the dataSource and pass that queue to the observer of the activity as a parameter.
+In the example above, our code is slightly forced: we should have implemented a change queue in the dataSource and pass that queue to the observer of the activity as a parameter.
 
-To avoid having to implement this queue, we can perform 
+To avoid having to implement this queue, we can perform: 
 ```kotlin
 itemsAdapter.notifyDataSetChanged()
 ```
 
 This method refreshes the entire list but it is expensive in terms of CPU and memory usage if we have very long lists.
 
-The first approach is the easiest to code and is almost optimal thanks to the DiffUtil callback. Meanwhile, the second approach is closer to optimal but requires that we implement an update queue pattern so that in the observer of the model we know what notifications need to be made.
+The first approach (`notifyItemChanged` and `notifyItemInserted`) is the easiest to code and is almost optimal thanks to the DiffUtil callback. Meanwhile, the second approach (`notifyDataSetChanged`)is closer to optimal but requires that we implement an update queue pattern so that in the observer of the model we know what notifications need to be made.
 
 
