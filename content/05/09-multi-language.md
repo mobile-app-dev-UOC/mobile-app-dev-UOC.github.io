@@ -62,7 +62,7 @@ val current: Locale = resources.configuration.local[0]
 
 Note: Resource files have a different appearance if we are using the Android project view or the file system view.
 
-> ![Appearance of resource files.](/images/05/country-selection.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![Appearance of resource files.](/images/05/resource-files.png){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Appearance of resource files.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
