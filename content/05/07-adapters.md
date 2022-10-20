@@ -214,7 +214,7 @@ Here we indicate that two items are the same if they have the same reference. We
 
 The update process would be as follows:
 
-	1. For this method to work,  the first time, in the `onCreate` of the activity, we assign a copy of the dataSource list to the adapter:
+    1. For this method to work,  the first time, in the `onCreate` of the activity, we assign a copy of the dataSource list to the adapter:
 
 ```kotlin
 var new_list:MutableList<Item> = ArrayList()
@@ -223,7 +223,7 @@ itemsListViewModel.dataSource.ItemsLiveData.value?.let { it1 -> new_list.addAll(
 itemsAdapter.submitList(new_list)
 ```
 
-	2. We modify the DataSource to perform the test.
+    2. We modify the DataSource to perform the test.
 
 ```kotlin
 val data:DataSource = DataSource.getDataSource(this.resources)
@@ -252,7 +252,7 @@ fun CommitChanges()
 }
 ```
 
-	3. This method will cause the model observer to run in the activity:
+    3. This method will cause the model observer to run in the activity:
 
 ```kotlin
 itemsListViewModel.itemsLiveData.observe(this, {
@@ -263,5 +263,50 @@ itemsListViewModel.itemsLiveData.observe(this, {
 ```
 
 The observer calls `submitList` with the list it receives as a parameter. The model will be updated after the call is executed.
+
+3. The second mechanism is to share the model with the adapter as well. 
+
+    1. To do this in the `onCreate` callback of the activity, we assign the exact same list that is contained in the model. 
+
+```kotlin
+itemsAdapter.submitList(DataSource.getDataSource(this.resources)
+	.getItemList().value)
+```
+
+    2. We make changes directly to the list shared by dataSource and Adapter.
+
+```kotlin
+Val data: DataSource = DataSource.getDataSource(this.resources)
+var item:Item? = data.getItemForId(3)
+item?.name = “updated”
+
+itemsListViewModel.dataSource.ItemsLiveData.value!!.add(6,Item(333,"New flower",R.drawable.rose,"new item"))
+
+itemsListViewModel.dataSource.ItemsLiveData.postValue(itemsListViewModel.dataSource.ItemsLiveData.value)
+```
+
+Likewise, at the end we invoke the `postValue` method so that the observer of the activity is triggered.
+
+```kotlin
+itemsListViewModel.itemsLiveData.observe(this, {
+   it?.let {   
+       itemsAdapter.notifyItemChanged(2)
+       itemsAdapter.notifyItemInserted(6)
+    }
+})
+```
+
+Then we manually indicate, by means of `notifyItemChanged` and `notifyItemInserted`, the changes we have made. 
+
+In the example above our code is slightly forced. We should have implemented a change queue in the dataSource and pass that queue to the observer of the activity as a parameter.
+
+To avoid having to implement this queue, we can perform 
+```kotlin
+itemsAdapter.notifyDataSetChanged()
+```
+
+This method refreshes the entire list but it is expensive in terms of CPU and memory usage if we have very long lists.
+
+The first approach is the easiest to code and is almost optimal thanks to the DiffUtil callback. Meanwhile, the second approach is closer to optimal but requires that we implement an update queue pattern so that in the observer of the model we know what notifications need to be made.
 
 
