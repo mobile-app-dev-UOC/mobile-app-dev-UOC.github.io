@@ -210,4 +210,58 @@ object ItemDiffCallback : DiffUtil.ItemCallback<Item>() {
 }
 ```
 
+Here we indicate that two items are the same if they have the same reference. We also indicate that one item has the same content as another if the `id` and `name` match.
+
+The update process would be as follows:
+
+	1. For this method to work,  the first time, in the `onCreate` of the activity, we assign a copy of the dataSource list to the adapter:
+
+```kotlin
+var new_list:MutableList<Item> = ArrayList()
+itemsListViewModel.dataSource.ItemsLiveData.value?.let { it1 -> new_list.addAll(it1) }
+
+itemsAdapter.submitList(new_list)
+```
+
+	2. We modify the DataSource to perform the test.
+
+```kotlin
+val data:DataSource = DataSource.getDataSource(this.resources)
+var item:Item = data.getItemForId(3)!!
+var item2:Item = item.copy()
+item2.name = "updated"
+data.updateItem(item,item2)
+data.addItem(Item(333,"New flower",R.drawable.rose,"new item"))
+data.CommitChanges()
+```
+
+In this code we make an update and an insertion.
+
+Please note that, in order to modify an item, we have to create a copy. If we do not do so, the item would maintain the same reference and the Diff would indicate that it has not been modified. Once all the modifications have been applied, we will execute the DataSource `CommitChanges` method so that the viewModel is informed of the existence of changes.
+
+**Important**: We must notify the viewModel only when **all** changes have already been made. If we notify after each change instead, the second change may be lost: when the notification of the second change arrived, the two lists would already be the same and therefore the DiffUtil callback would not notice a difference.
+
+The method `CommitChanges` indicates that changes have occurred using `ItemsLiveData.postValue`.
+
+```kotlin
+fun CommitChanges()
+{
+   val currentList = ItemsLiveData.value
+   val updatedList = currentList!!.toMutableList()
+   ItemsLiveData.postValue(updatedList)
+}
+```
+
+	3. This method will cause the model observer to run in the activity:
+
+```kotlin
+itemsListViewModel.itemsLiveData.observe(this, {
+           it?.let {
+               itemsAdapter.submitList(it)
+           }
+       })
+```
+
+The observer calls `submitList` with the list it receives as a parameter. The model will be updated after the call is executed.
+
 
