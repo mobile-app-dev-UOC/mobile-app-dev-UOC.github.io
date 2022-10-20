@@ -66,3 +66,13 @@ If we want to continue the execution without going line by line, click on the `P
 > ![Play and Pause buttons in the debugger.](/images/06/pause-play.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Play and Pause buttons in the debugger.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+Pressing the `Stop` button stops the app and ends the debug session.
+
+One of the main goals of debug sessions is to check the code around breakpoints. We can view all active breakpoints by clicking on the button that gives us access to the breakpoint window. From this window, we can enable, disable or delete them.
+
+
+> ![Inspecting the list of active breakpoints.](/images/06/active-breakpoints.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Inspecting the list of active breakpoints.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
