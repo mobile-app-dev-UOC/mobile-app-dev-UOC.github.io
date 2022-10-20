@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 5.8. Multi-density
+title: 5.8. Orientations and screen types
 parent: 5. User interfaces
 nav_order: 8
 ---
 
-# 5.8. Multi-density
+# 5.8. Orientations, screen sizes and densities
 
 By default, an application allows `portrait` and `landscape` orientations.
 If we want to support only one orientation, we have to specify it in the `manifest` file. Orientation is configured for each activity separately. If we want the app to always remain in portrait orientation we will use the following:
