@@ -63,7 +63,7 @@ The JavaScript function returns the integer 10 and updates its content using the
 
 ---
 
-Communication: HTML to Kotlin
+## Communication: HTML to Kotlin
 
 In Kotlin, we create an interface where we will implement the methods that should be invoked from HTML.
 
