@@ -104,3 +104,50 @@ Within the Logcat window we can view both system messages and messages generated
 > *Messages in Logcat.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
+For example, we may wish to record messages during execution to ease validation and debugging. To generate this type of  messages we use the method `Log.d`.
+
+```kotlin
+Log.d("Listener","message from binding.login.setOnClickListener")
+```
+
+As both system and application messages are mixed in Logcat, we will need to to filter messages to access the ones we are interested in. To view only these application messages in the filtering zone, we use `Listener`, the tag we passed as parameter to the `Log.d` call. In the search box, we can search text both from the tag or from the message string we have passed to `Log.d`.
+
+> ![Filtering messages in Logcat.](/images/06/filtering-logcat.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Filtering messages in Logcat.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+---
+
+## Logcat and errors that crash the application
+
+When there is a fatal error that causes the application to terminate abruptly, we can use Logcat to study what error messages have been emitted.
+
+For instance, in the following example we have caused an error by trying to convert a string containing a word to an integer.
+
+```kotlin
+val a:Int = ("error").toInt()
+```
+
+As a result, an exception has been raised, the application has been terminated, and in Logcat we can see a trace of the error and the line where it appeared.
+
+> ![Tracing fatal errors in Logcat.](/images/06/fatal-error.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Tracing fatal errors in Logcat.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+---
+
+## Profiler
+
+The Profiler window allows us to see how the CPU, RAM, power and network consumption of our application evolves.
+
+> ![Accessing Android Studios's profiler.](/images/06/profiler.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Accessing Android Studios's profiler.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+This type of inspection is very useful because we can detect situations such as unbounded memory consumption, excessive network usage, ... For example:
+
+1. Working with large, high-resolution images: When we load them into memory, the system will show in the profiler an excessive memory consumption. Then, we may have to implement some kind of strategy to reduce the size of the images. 
+
+2. Network usage: If our app consume too much network bandwith, it may be interesting to use some sort of local cache.
+
+
