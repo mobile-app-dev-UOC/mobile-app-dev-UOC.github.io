@@ -67,19 +67,19 @@ When running the method with parameter 4, we expect a result of 30000. To compar
 
 Android Studio shows us on its interface if the test has passed successfully or not: 
 
-> [Inspecting the result of a test.](/images/06/test-result.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![Inspecting the result of a test.](/images/06/test-result.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Inspecting the result of a test.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 If an error occurs, Android Studio reports which type of error occurred. The error occurs when the actual result does not correspond to the expected result.
 
-> [Inspecting a failed test.](/images/06/failed-test.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![Inspecting a failed test.](/images/06/failed-test.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Inspecting a failed test.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 If we want to run **all the tests** in a test class, we must click on the icon next to the class name:
 
-> [Running all tests.](/images/06/test-all.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![Running all tests.](/images/06/test-all.png){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Running all tests.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
