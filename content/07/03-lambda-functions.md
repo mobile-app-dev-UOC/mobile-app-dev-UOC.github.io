@@ -38,7 +38,7 @@ In this case the result of the previous code is `80`.
 
 Within a lambda function, we can access local variables of the method where it is defined and member variables from the class that contains it.
 
-For instance, the code that is executed by a coroutine (we will introduce this concept in [Section 10.1](/content/10/coroutines)), or the listener code when attending an event (see [Section 8.1](/content/08(1-listeners))) is usually written as a lambda function. An example of such a listener would be the following:
+For instance, the code that is executed by a coroutine (we will introduce this concept in [Section 10.1](/content/10/coroutines)), or the listener code when attending an event (see [Section 8.1](/content/08/1-listeners)) is usually written as a lambda function. An example of such a listener would be the following:
 
 ```kotlin
 binding.btnSearch.setOnClickListener {
