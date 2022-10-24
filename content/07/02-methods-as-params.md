@@ -41,4 +41,4 @@ var r = TestFunArg(5, ::multiplication)
 
 ```
 
-In this case, the result of the method `TestFunArg` is `20.
+In this case, the result of the method `TestFunArg` is `20`.
