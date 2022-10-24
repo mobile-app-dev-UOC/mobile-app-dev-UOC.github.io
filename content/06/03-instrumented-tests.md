@@ -73,7 +73,7 @@ The Espresso library allows us to perform actions such as:
 
 The following [video](/images/06/test-video.mp4) shows a testing session. We can see how at the bottom of the screen, in the Cover browser, it reports the test result and the time that the run has lasted.
 
-> [Result of a Espresso interface test.](/images/06/espresso-test.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![Result of a Espresso interface test.](/images/06/espresso-test.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Result of a Espresso interface test.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
