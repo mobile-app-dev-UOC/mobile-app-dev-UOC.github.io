@@ -49,7 +49,7 @@ We can also invoke methods of unknown classes in a similar way.
 
 Reflection is a very flexible and powerful feature. Nevertheless, the reflection library should be added only if our library or application requires those capabilities because it grows the size of the executable.
 
-**Example:** The Retrofit library used for communications with REST APIs (we will see it in the backend section, [Section 11](content/11/)) receives as a parameter the type of a class in our application, the class that describes the available operations of that API. The class received as parameter is not known by the Retrofit library.
+**Example:** The Retrofit library used for communications with REST APIs (we will see it in the backend section, [Section 11](/content/11/)) receives as a parameter the type of a class in our application, the class that describes the available operations of that API. The class received as parameter is not known by the Retrofit library.
 
 ```kotlin
 val service = getRetrofit().create(APIService::class.java)
