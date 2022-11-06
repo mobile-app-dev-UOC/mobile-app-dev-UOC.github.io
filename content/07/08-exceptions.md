@@ -11,11 +11,11 @@ Exceptions offer a mechanism to capture run-time errors in our code. Using excep
 
 ```kotlin
 try {
-   	// Code to watch
+   // Code to watch
 }
-catch (e: Exception Type to catch)
+catch (e: ExceptionTypeToCatch)
 {
- 	// if we have an exception then execute this code
+ 	// if there is an exception then execute this code
 }
 ```
 
@@ -29,11 +29,11 @@ try {
 }
 catch (e: NumberFormatException)
 {
- 	Log.d("error",e.stackTraceToString())
+ 	Log.d("error", e.stackTraceToString())
 }
 ```
 
-In this snippet, we use `stackTraceToString` to display the error message and call stack in the Logcat window. In this example, we would see the following information in Logcat:
+In the previous snippet, we have used `stackTraceToString` to display the error message and call stack in the Logcat window. In this example, we would see the following information in Logcat:
 
 ```
 2022-04-08 15:36:15.200 26410-26410/com.uoc.kotlin_advanced D/error: java.lang.NumberFormatException: For input string: “help”
@@ -82,7 +82,7 @@ catch (e: NumberFormatException){
 }
 catch (e: Exception)
 {
- Log.d("error",e.stackTraceToString())
+   Log.d("error",e.stackTraceToString())
 }
 ```
 
@@ -91,7 +91,6 @@ We can also create our own exceptions by inheriting from the `Exception` class:
 
 ```kotlin
 class LowNumberException(message: String) : Exception(message) {
-
 }
 ```
 
@@ -114,7 +113,7 @@ catch (e: NumberFormatException){
 }
 catch (e: Exception)
 {
- Log.d("error",e.stackTraceToString())
+   Log.d("error",e.stackTraceToString())
 }
 ```
 

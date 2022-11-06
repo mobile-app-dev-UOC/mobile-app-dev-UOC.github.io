@@ -7,7 +7,7 @@ nav_order: 7
 
 # 7.7. Functional programming
 
-While the Kotlin language eminently focuses on object-oriented programming, it also supports another programming paradigm: functional programming. Functional programming is based on the intensive use of lambda expressions and recursion.  Kotlin supports the definition of functions using a functional programming style. 
+While the Kotlin language eminently focuses on object-oriented programming, it also supports another programming paradigm: **functional programming**. Functional programming is based on the intensive use of lambda expressions and recursion.  Kotlin supports the definition of functions using a functional programming style. 
 
 For example, it is very common to take advantage of the functional programming aspects offered by the collections of the Kotlin Standard Library.
 
