@@ -20,7 +20,7 @@ var l2 = l.filter { it.age < 20 }
 
 Here, we create a list of students and get the first two students who are less than 20 years old sorted alphabetically. The result would be: `"Ada"` and `"Adam"`.
 
-We can also apply a function to each item on the list.
+We can also apply a function to each item on a list.
 
 ```kotlin
 var l:List<Student> = listOf(Student("Tom",40),Student("Ada",19),Student("Hugo",15),Student("Adam",14))
