@@ -72,6 +72,16 @@ class DbHelper(context: Context) : SQLiteOpenHelper(context, "school", null, 1) 
 
 The `onCreate` callback from our class inheriting from superclass `SQLiteOpenHelper` only runs once: when the database does not exist. It is not run when we create the instance of the class derived from `SQLiteOpenHelper`. Instead, it is invokedwhen we access the database using the `writableDatabase property`.
 
+```kotlin
+val dbHelper = DbHelper(this)
+val db = dbHelper.writableDatabase
+```
+
+The database will be created in our filesystem, in the `databases` folder:
+
+> ![Location of the database in the filesystem.](/images/09/database-directory.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Location of the database in the filesystem.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 
 
