@@ -10,7 +10,6 @@ nav_order: 1
 We use the keyword `vararg` to indicate that the number of parameters is unspecified.
 
 ```kotlin
-
 fun Add(vararg numbers: Int):Int {
    var result = 0
    for (t in numbers)
