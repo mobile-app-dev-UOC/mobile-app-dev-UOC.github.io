@@ -197,7 +197,7 @@ getResult.launch(intent)
 To collect the result, we will have created the corresponding contract:
 
 ```kotlin
-ar getResult  = registerForActivityResult(
+var getResult  = registerForActivityResult(
    ActivityResultContracts.StartActivityForResult()) {
    val value = it.data?.getData()
    val inputStream: InputStream? = this.getContentResolver().openInputStream(value!!)
