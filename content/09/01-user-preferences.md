@@ -66,7 +66,7 @@ Values stored as user preferences are not encrypted. Thus, you should take care 
 `/data/data/YOUR_PACKAGE_NAME/shared_prefs/PREFERENCES_NAME.xml`
 `PREFERENCES_NAME` is the name of the preference package. In this case, the `PREFERENCES_NAME` we have chosen is  `application`. 
 
-> ![Location of user preferences.](/images/08/preferences.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![Location of user preferences.](/images/09/preferences.png){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Location of user preferences.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
