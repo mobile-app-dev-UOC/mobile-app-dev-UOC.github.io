@@ -59,11 +59,42 @@ If instead of `filesDir` or `getExternalFilesDir` we use `cacheDir` or `external
 
 Temporary files can be destroyed by the user from the system application management area. This option can be found in the followiing path: `Settings/Apps/<our app>/Storage/Clear Cache`
 
->**Learn more
-> The `File` class has methods that allow us to perform all the operations we need with files, directories, path comparison, ... You can find more information about this class here:
+>**Learn more:**
+>The `File` class has methods that allow us to perform all the operations we need with files, directories, path comparison, ... You can find more information about this class here:
 [https://developer.android.com/reference/java/io/File](https://developer.android.com/reference/java/io/File).
 
-
-
 ## 9.2.2. Encrypting text files
+
+We create the keys and type of encryption that we will use to encrypt our files. We use this information to create an encryptedFile that will allow us to encrypt the File.
+
+```kotlin
+val masterKey:MasterKey = MasterKey.Builder(this, MasterKey.DEFAULT_MASTER_KEY_ALIAS)
+   .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
+   .build();
+
+val file: File = File(directory, "secret_data")
+val encryptedFile = EncryptedFile.Builder(this,
+   file,
+   masterKey,
+   EncryptedFile.FileEncryptionScheme.AES256_GCM_HKDF_4KB
+).build()
+```
+
+Now we can use `FileOutputStream` and `FileInputStream` to read and write texts. As you will see, we write and using bytes.
+
+```kotlin
+var text:String = "this is the text"
+// write to the encrypted file
+val encryptedOutputStream: FileOutputStream = encryptedFile.openFileOutput()
+encryptedOutputStream.write(text.toByteArray(Charsets.UTF_8))
+encryptedOutputStream.close()
+// read the encrypted file
+val encryptedInputStream: FileInputStream = encryptedFile.openFileInput()
+var bytes:ByteArray = encryptedInputStream.readBytes()
+encryptedInputStream.close()
+var text2:String = String(bytes, charset("UTF-8"))
+```
+
+
+
 
