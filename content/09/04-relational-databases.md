@@ -70,7 +70,7 @@ class DbHelper(context: Context) : SQLiteOpenHelper(context, "school", null, 1) 
 }
 ```
 
-The `onCreate` callback from our class inheriting from superclass `SQLiteOpenHelper` only runs once: when the database does not exist. It is not run when we create the instance of the class derived from `SQLiteOpenHelper`. Instead, it is invokedwhen we access the database using the `writableDatabase property.
+The `onCreate` callback from our class inheriting from superclass `SQLiteOpenHelper` only runs once: when the database does not exist. It is not run when we create the instance of the class derived from `SQLiteOpenHelper`. Instead, it is invokedwhen we access the database using the `writableDatabase property`.
 
 
 
