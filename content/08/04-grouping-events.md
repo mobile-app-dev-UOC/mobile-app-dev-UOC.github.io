@@ -35,7 +35,6 @@ The following methods from `MotionEvent` provide us detailed information about a
 The index of each pointer (finger) is **not** preserved between consecutive `MotionEvent.ACTION_MOVE` events. That is, a pointer could be in index 0 in one event and in index 2 in the next. However, the `getPointerId` of each pointer is preserved between different `MotionEvent.ACTION_MOVE`. Thus, we will need to use the `getPointerId` instead of the index to keep track of the position of each finger.
 
 ```kotlin
-
 fun showHistory(ev: MotionEvent) {
    val historySize = ev.historySize
    val pointerCount = ev.pointerCount
@@ -48,7 +47,6 @@ fun showHistory(ev: MotionEvent) {
                        ev.getHistoricalX(p, h).toString() + " " +
                        ev.getHistoricalY(p, h).toString() + " "
            )
-
        }
    }
 
@@ -58,7 +56,6 @@ fun showHistory(ev: MotionEvent) {
                    ev.getX(p).toString() + " " +
                    ev.getY(p).toString() + " "
        )
-
    }
 
 }
