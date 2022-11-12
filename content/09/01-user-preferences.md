@@ -80,7 +80,7 @@ Values stored as user preferences are not encrypted. Thus, you should take care 
 We can easily encrypt this file using:
 
 ```kotlin
-val  masterKey:MasterKey = MasterKey.Builder(this, MasterKey.DEFAULT_MASTER_KEY_ALIAS)
+val masterKey:MasterKey = MasterKey.Builder(this, MasterKey.DEFAULT_MASTER_KEY_ALIAS)
    .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
    .build();
 
