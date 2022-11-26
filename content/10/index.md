@@ -22,4 +22,8 @@ Every application has a primary thread that handles user interface management. T
 
 All threads share the properties of the classes they use but each thread has its own local variables.
 
+> ![Concurrent threads in a mobile app.](/images/10/concurrency.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Concurrent threads in a mobile app.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
 {:toc:}
