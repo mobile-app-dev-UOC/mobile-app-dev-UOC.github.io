@@ -26,4 +26,11 @@ All threads share the properties of the classes they use but each thread has its
 > *Concurrent threads in a mobile app.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
+There are two types of concurrency scenarios: 
+
+- Short tasks within the lifecicyle of the application. These are resolved by allowing small snippets of code to run concurrently.
+
+- Entire subsystems running concurrently during the lifecycle of the application. Examples of these subsystems are: cache systems running in the background, user interaction analysis systems, spellcheckers in text editors, systems using machine learning, etc. These subsystems in concurrent programming are called **Actors**.
+
+
 {:toc:}
