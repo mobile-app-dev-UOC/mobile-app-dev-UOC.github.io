@@ -88,12 +88,11 @@ If instead of calling a method we were to run directly on the body of the corout
 
 ```kotlin
 GlobalScope.launch(Dispatchers.Default) {
-
    for(i in 1..100){
-       delay(1000L)
-        mutex.withLock {
-         	counter++
-   	   }
+      delay(1000L)
+      mutex.withLock {
+         counter++
+      }
    }
 }
 ```
