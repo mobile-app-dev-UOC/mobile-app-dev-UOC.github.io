@@ -24,4 +24,47 @@ Thus, we have three types of Dispatchers:
 - **Main:** This is a pool with a single thread that is the main thread running the interface. It is useful for running code from a coroutine on the main thread.
 
 
-The simplest example of coroutine can be two coroutines running in parallel to write a message to the Log.
+The simplest usage scenario can be two coroutines running in parallel to write a message to the Log.
+
+```kotlin
+GlobalScope.launch(Dispatchers.Default) {
+   for(i in 1..100){
+       delay(1000L)
+       Log.i("coroutine 1!",thread.currentthread().name.toString())
+   }
+}
+
+GlobalScope.launch(Dispatchers.Default) {
+   for(i in 1..100){
+       delay(1000L)
+       Log.i("coroutine 2!",thread.currentthread().name.toString())
+   }
+
+   GlobalScope.launch(Dispatchers.Main) {
+       FromCoroutine()
+   }
+}
+```
+
+The first coroutine runs on the `Default dispatcher`. It is a loop that performs a hundred iterations by stopping for a second at each iteration and writing an iteration message to the Logcat console. Meanwhile, the second coroutine behaves exactly like the first one but, when it ends, it returns the control to the main thread running the `FromCoroutine` method.
+
+Let us inspect the result of this code in the debug environment.
+
+- The `main` thread is running the interface.
+
+> ![Main thread](/images/10/thread-main.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Main thread.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+- The code of our first coroutine is run by the thread `worker1`.
+
+> ![First coroutine](/images/10/thread1.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *First coroutine.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+- The code of our second coroutine is run by the thread `worker2`.
+
+> ![Second coroutine](/images/10/thread2.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Second coroutine.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
