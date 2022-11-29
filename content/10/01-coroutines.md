@@ -46,7 +46,7 @@ GlobalScope.launch(Dispatchers.Default) {
 }
 ```
 
-The first coroutine runs on the `Default dispatcher`. It is a loop that performs a hundred iterations by stopping for a second at each iteration and writing an iteration message to the Logcat console. Meanwhile, the second coroutine behaves exactly like the first one but, when it ends, it returns the control to the main thread running the `FromCoroutine` method.
+The first coroutine runs on the `Default` dispatcher. It is a loop that performs a hundred iterations by stopping for a second at each iteration and writing an iteration message to the Logcat console. Meanwhile, the second coroutine behaves exactly like the first one but, when it ends, it returns the control to the main thread running the `FromCoroutine` method.
 
 Let us inspect the result of this code in the debug environment.
 
@@ -67,4 +67,44 @@ Let us inspect the result of this code in the debug environment.
 > ![Second coroutine](/images/10/thread2.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Second coroutine.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+## Scope
+
+The `Scope` indicates the ambit where the coroutine should be executed.  If we use, as in the example, **GlobalScope**, we are using a global scope across the entire application which means that these coroutines will not be destroyed until they are completed, explicitly cancelled or the application is closed.
+
+We can also create local contexts, so we can make the coroutine stop working for example by closing the activity that contains them.
+
+Let us consider an example:
+We create properties of our activity that will contain a `scope`, a context and two jobs that are references to two coroutines that we will create.
+
+```kotlin
+val coroutineContext: coroutineContext =  Dispatchers.Default + SupervisorJob()
+val scope: coroutinescope = coroutinescope(coroutineContext)
+
+lateinit var job1: Job
+lateinit var job2: Job
+```
+
+Now in the `onCreate` callback of our activity we create the coroutines using the local scope we have previously created and assign them to the jobs.
+
+```kotlin
+job1 = scope.launch() {
+   for(i in 1..100){
+       delay(1000L)
+       Log.i("coroutine 1!",thread.currentthread().name.toString())
+   }
+}
+
+job2 = scope.launch() {
+   for(i in 1..100){
+       delay(1000L)
+       Log.i("coroutine 2!",thread.currentthread().name.toString())
+   }
+}
+```
+
+At any time we can stop one of the coroutines by using `job1.cancel()` or `job2.cancel()`. And if we want to stop both at the same time, we can use `scope.cancel()`.
+
+
+
 
