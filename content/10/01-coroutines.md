@@ -52,19 +52,19 @@ Let us inspect the result of this code in the debug environment.
 
 - The `main` thread is running the interface.
 
-> ![Main thread](/images/10/thread-main.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![Main thread](/images/10/thread-main.png){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Main thread.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 - The code of our first coroutine is run by the thread `worker1`.
 
-> ![First coroutine](/images/10/thread1.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![First coroutine](/images/10/thread1.png){:style="display:block; margin-left:auto; margin-right:auto"}
 > *First coroutine.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 - The code of our second coroutine is run by the thread `worker2`.
 
-> ![Second coroutine](/images/10/thread2.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![Second coroutine](/images/10/thread2.png){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Second coroutine.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
