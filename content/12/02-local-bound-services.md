@@ -9,7 +9,7 @@ nav_order: 2
 
 In this scenario, the service cannot communicate with the outside. It is called “local bound” because it is used from the same application that creates it. It also runs on the same thread that creates it, in this case the main thread. If we want the service to perform tasks concurrently, we must use one of the mechanisms detailed in [Section 10](/contents/10/).
 
-First, we declare the `MyService` class that inherits from `Service`. This class contains an internal `MP3ServiceBinder` class that provides the methods that can be used by the service client. In this case, the client will be our activity.
+First, we declare the class `MyService` that inherits from `Service`. This class contains an inner class `MP3ServiceBinder` that provides the methods that can be used by the service client. In this case, the client will be our activity.
 
 ```kotlin
 class MyService : Service() {
