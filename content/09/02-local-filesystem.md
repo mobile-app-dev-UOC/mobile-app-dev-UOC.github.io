@@ -34,14 +34,14 @@ We can see that the method `fileDir` returns the value:
 `/data/user/0/com.uoc.localstorage/files`
 
 
-> ![Root of the internal memory filesystem.](/images/09-filesystem.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![Root of the internal memory filesystem.](/images/09/filesystem.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Root of the internal memory filesystem.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 If we want to write to external storage, we would do the same but using `getExternalFilesDir` instead of `filesDir`. In that case, in the emulator, we will see that it returns a path similar to this one:
 `/storage/emulated/0/Android/data/com.uoc.localstorage/files`.
 
-> ![Root of the external memory filesystem.](/images/09-external-filesystem.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![Root of the external memory filesystem.](/images/09/external-filesystem.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Root of the external memory filesystem.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
