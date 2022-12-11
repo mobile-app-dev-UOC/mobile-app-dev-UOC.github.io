@@ -97,7 +97,7 @@ GlobalScope.launch(Dispatchers.Default) {
 }
 ```
 
-## 10.2.4. Atomic classes
+## 10.2.3. Atomic classes
 
 We can declare basic types ready for use in concurrent environments. For example, we can declare another counter of type AtomicInteger.
 
@@ -169,7 +169,10 @@ If we execute this code, we will see in Logcat that there are no two consecutive
 ```
 
 If we instead initialize the maximum number of threads to 2:
-`private val semaphore: Semaphore = Semaphore(2)`
+
+```kotlin
+private val semaphore: Semaphore = Semaphore(2)
+``
 
 Then, we will have two workers inside the critical section at the same time: 
 

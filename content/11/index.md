@@ -9,7 +9,7 @@ has_children: true
 
 The back-end includes all the services or data offered by the online part of an application. Most applications require back-end functionality. These services or data may be core features or simply auxiliary ones, such as gathering analytics about app usage.
 
-> ![Structure of a back-end.](/images/10/back-end.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![Structure of a back-end.](/images/11/back-end.png){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Structure of a back-end.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 

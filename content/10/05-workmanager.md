@@ -42,7 +42,7 @@ val work =
 WorkManager.getInstance(this).enqueue(work)
 ```
 
-Now we can close the app in the emulator and, using the `attach` button, connect the debugger to our app again. THen, we will see that the code of our class continues to run even after we closed our app.
+Now we can close the app in the emulator and, using the `attach` button, connect the debugger to our app again. Then, we will see that the code of our class continues to run even after we closed our app.
 
 > ![The scheduled task continues to run after the original app was closed.](/images/10/workmanager.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *The scheduled task continues to run after the original app was closed.*  
