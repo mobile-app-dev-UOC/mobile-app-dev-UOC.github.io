@@ -35,9 +35,14 @@ In this section, we are not going to focus on the business logic, which would be
 As we indicated in the backend section, we need to go to the Firebase home screen and create a new project.  For this project we agree to use Google Analytics, although it is not strictly necessary if we are only going to use Cloud Messaging functionality.  Then, we select the `Cloud Messaging` option.
 
 
-> ![Using Cloud Messaging.](/images/13/single-back-end.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> ![Using Cloud Messaging.](/images/13/cloud-messaging.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
 > *Using Cloud Messaging.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 We add the app that will use these notifications with by tapping the platform type icon. In our case, we click on Android.
 
+Then, we enter the unique identifier of our application and optionally an identifier to be used within Firebase.
+
+> ![Setting up the app identifier.](/images/13/app-id.jpg){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Setting up the app identifier.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
