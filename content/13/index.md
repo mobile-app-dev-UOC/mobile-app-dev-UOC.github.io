@@ -17,9 +17,7 @@ There are two types of notifications in Android
 In terms of how we receive a notification from our app, there are two different scenarios:
 
 1.	The application is running in the foreground.
-2.	The application is running in the background or the application is off.
-
-
+2.	The application is running in the background or the application is not running.
 
 {:toc:}
 
