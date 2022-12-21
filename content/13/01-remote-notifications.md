@@ -181,3 +181,53 @@ The `time_to_live` parameter that indicates how long the notification should rem
 > *Customizing a notification in the Firebase Cloud Messaging Console.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
+
+Processing a notification can be slow or fast, depending on what it means for our app to receive that notification. 
+
+The example code simply states that if the notification carries additional data, this notification must be executed on a separate thread using the `scheduleJob` method used by the `WorkManager` we studied in the concurrency section ([Section 10.5](/content/10/05-workmanager)).
+
+> ![Debugging the code that receives a remote notification.](/images/13/debug-notification.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Debugging the code that receives a remote notification.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+```kotlin
+private fun scheduleJob() {
+   // [START dispatch_job]
+  val work = OneTimeWorkRequest.Builder(MyWorker::class.java).build()
+   WorkManager.getInstance(this).beginWith(work).enqueue()
+   // [END dispatch_job]
+}
+```
+
+Let us remember that by default notifications are processed on the main thread, so if we anticipate that processing may take some time, a concurrent scheduling mechanism needs to be used.
+
+If the application is turned off or in the background, the above code will not be executed. Instead, the notification appears in the system notification inbox. Clicking on the notification opens the app. 
+
+To find out if the app has started because the user clicked on a notification, in the activity's `onCreate` method we can explore the extras to see if we find the parameters of a notification.
+
+```kotlin
+
+if (attempt.extras != null) {
+   for (key in intent.extras!!.keySet()) {
+       val value = intent.extras!!.getString(key)
+       Log.d(TAG, “Key: $key Value: $value”)
+   }
+}
+```
+
+In this case, in the Logcat window we observe the following:
+
+```
+2022-04-21 2:23:53.773 17193-17193/com.uoc.notifications D/MainActivity: Key: google.ttl Value: null
+2022-04-21 14:23:53.780 17193-17193/com.uoc.notifications D/MainActivity: Key: google.original_priority Value: high
+2022-04-21 2:23:53.787 17193-17193/com.uoc.notifications D/MainActivity: Key: age Value: 23
+2022-04-21 2:23:53.796 17193-17193/com.uoc.notifications D/MainActivity: Key: from Value: 854165052084
+2022-04-21 2:23:53.804 17193-17193/com.uoc.notifications D/MainActivity: Key: name Value: John
+2022-04-21 14:23:53.812 17193-17193/com.uoc.notifications D/MainActivity: Key: google.message_id Value: 0:1650543757735526%7f81b5967f81b596
+2022-04-21 14:23:53.821 17193-17193/com.uoc.notifications W/Bundle: Key gcm.n.analytics_data expected String but value was a android.os.Bundle.  The default value <null> was returned.
+2022-04-21 14:23:53.881 17193-17193/com.uoc.notifications D/MainActivity: Key: gcm.n.analytics_data Value: null
+2022-04-21 14:23:53.890 17193-17193/com.uoc.notifications D/MainActivity: Key: collapse_key Value: com.uoc.notifications
+```
+
+
+
