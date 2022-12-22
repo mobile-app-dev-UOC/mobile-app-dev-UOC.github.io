@@ -22,9 +22,9 @@ Indoor positioning is usually done in one of two ways:
 -	Using additional hardware, devices that are placed inside and help us position ourselves. An example of this technology would be [Apple AirTags](https://www.apple.com/es/airtag/).
 -	Techniques based on mapping the indoor space from the different Wi-Fi signals and other signals received at each point. This technique does not require additional hardware.
 
-## Basics
+---
 
-Basics:
+## Basics
 
 - **Latitude:** The latitude is the angular distance between the equator and a given point on Earth, measured along the meridian at which that point is located. It can be used to specify the distance of a location north or south from the equator. It is expressed in angular units. 
 
