@@ -43,7 +43,7 @@ As we indicated in the backend section, we need to go to the Firebase home scree
 > *Using Cloud Messaging.*  
 > Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
-We add the app that will use these notifications with by tapping the platform type icon. In our case, we click on Android.
+We add the app that will use these notifications with by clicking the platform type icon. In our case, we click on Android.
 
 Then, we enter the unique identifier of our application and optionally an identifier to be used within Firebase.
 
