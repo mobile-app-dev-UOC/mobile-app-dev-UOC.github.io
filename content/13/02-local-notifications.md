@@ -129,4 +129,4 @@ class MyWorker(val context: Context,
 }
 ```
 
-We need to remember that the `WorkManager` is another process and, therefore, even if we close the application the `WorkManager will continue running and send the notification.
+We need to remember that the `WorkManager` is another process and, therefore, even if we close the application the `WorkManager` will continue running and send the notification.
