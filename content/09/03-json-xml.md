@@ -11,6 +11,8 @@ We have already seen that our app operates with objects. However, we may need th
 
 To do this, we can use two alternative textual formats: JSON or XML.
 
+---
+
 ## 9.3.1. JSON (JavaScript Object Notation)
 
 JSON is highly tied to JavaScript. JavaScript provides methods that allow conversion of JavaScript objects to JSON strings (serialization) and conversion of JSON strings to JavaScript objects (deserialization). Its simplicity allowed it to spread quickly. 
