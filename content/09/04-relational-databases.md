@@ -202,7 +202,212 @@ Finally, if we are only going to run query operations it is better to access:
 db_read = dbHelper.readableDatabase
 ```
 
-
-
+---
 
 ## 9.4.2. Room
+
+The Room library is a code layer that works over SQLite and tries to get the programmer away from SQL-related aspects. Google recommends using this library. 
+
+First, we must add Room to our project in the Gradle file:
+
+1. In the plugins section, we must include the following:
+
+```gradle
+plugins {
+   id 'com.android.application'
+   id 'kotlin-android'
+   id 'kotlin-kapt'
+}
+```
+
+2. In the dependencies section we must add at least the following:
+
+```gradle
+dependencies {
+   implementation "androidx.room:room-ktx:2.4.1"
+   kapt "androidx.room:room-compiler:2.4.1"
+   androidTestImplementation "androidx.room:room-testing:2.4.1"
+}
+```
+
+If we want extra features, we must add additional libraries.
+
+Second, we need to create the classes representing our entities in the model.
+
+```kotlin
+@Entity
+data class Subject(
+   @PrimaryKey val subject_id: Int,
+   @ColumnInfo(name = "subject_name") val subject_name: String?
+)
+@Entity
+data class Student(
+   @PrimaryKey val student_id: Int,
+   @ColumnInfo(name = "student_name") var student_name: String?,
+   @ColumnInfo(name = "student_email") var student_email: String?
+)
+
+@Entity(primaryKeys = ["subject_id", "student_id"])
+data class Subject_Student(
+   val subject_id: Int,
+   val student_id: Int
+)
+```
+
+Notice that these classes have annotations or decorations such as: `@Entity`, `@PrimaryKey`, `@ColumnInfo`, ...  These annotations will allow Room to generate the database creation scheme. To write these annotations correctly, you need to know some SQL fundamentals, as we can even indicate foreign keys that will ensure better consistency or indices that will enable better performance. For instance, the `@PrimaryKey` annotation identifies the primary key of a table: a column with no repeated or null values where an index will be created to quickly access queries by that column.
+
+We then create the Data Access Object (DAO) classes. These classes will provide the insertion, deletion, modification and query operations on the previous classes.
+
+```kotlin
+@Dao
+ StudentDao interface {
+   @Query(“SELECT * FROM Student”)
+   fun getAll(): List<Student>
+
+   @Insert
+   fun insertAll(vararg users: Student)
+
+   @Delete
+   fun delete(user: Student)
+
+   @Update
+   fun update(user: Student)
+
+}
+```
+
+The following annotations can be used:
+- `@Query` indicates that the method is a single query
+- `@Insert` indicates an insertion
+- `@Delete` indicates a deletion
+- `@Update` indicates a modification
+
+Finally, we create the class that will represent our database:
+
+```kotlin
+@Database(entities = [Student::class,Subject::class,Subject_Student:::class], version = 1)
+abstract class AppDatabase : RoomDatabase() {
+   abstract fun studentDao(): StudentDao
+}
+```
+
+> ![Architecture of an app using the Room library.](/images/09/room.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Architecture of an app using the Room library.*  
+> Source: [Android developers](
+https://developer.android.com/training/data-storage/room) License: [CC BY 2.5](http://creativecommons.org/licenses/by/2.5/)
+
+
+Now we can use this database in our app. It is very important to understand that Room operations should be performed on a different execution thread than the main thread. As always, the idea is to prevent data access operations, even if they are performed locally in the device, from impacting the interface by being very slow.
+
+For the above reason we launched a Kotlin coroutine and inside we put our example code:
+
+```kotlin
+
+GlobalScope.launch(Dispatchers.Default) {
+
+ val db = Room.databaseBuilder(
+     applicationContext,
+     AppDatabase::class.java, "school2"
+ ).build()
+
+ val studentDao = db.studentDao()
+
+    // More code
+}
+```
+
+Within the coroutine, the first thing we indicate is that we want to create the database if it does not exist in a SQLite file that will be called `school2`. Then we get the Student Data Access Object and use the `insertAll` method to make insertions.
+
+```kotlin
+studentDao.insertAll(
+   Student(1, "Robert", "robert@rrrr.com"),
+   Student(2, "Ada", "ada@rrrr.com")
+)
+```
+
+
+For a list of all students we can use:
+
+```kotlin
+var l = studentDao.getAll()
+```
+We can modify the email of the second student in the list by doing:
+
+```kotlin
+l[1].student_email = "new_mail@mail.com"
+studentDao.update(l[1])
+```
+
+And now we can delete the first student by doing:
+```kotlin
+studentDao.delete(l[0])
+```
+
+We need to be careful because Room does not keep reference consistency as other libraries in other programming environments do. That is, the list `l` in our code still has the deleted value. If we want a list without the deleted value, we will need to run `getAll` again.
+
+
+Many-to-many (M:N) relationships, as is our case, should be inserted manually. That is, it is necessary to create the DAO. 
+
+```kotlin
+@Dao
+ Subject_StudentDao interface {
+   @Insert
+   fun insertAll(vararg subjects: Subject_Student)
+}
+```
+
+We access the DAO and connect the student to the subject using their respective identifiers.
+
+```kotlin
+val subject_StudentDao =  db.subject_StudentDao()
+subject_StudentDao.insertAll(Subject_Student(1,2))
+```
+
+Once students and subjects have been connected, we may want to have all the subjects you take automatically loaded when you load a student.
+
+To do this we added a new class to our model:
+
+```kotlin
+@Entity
+data class StudentWithSubjets(
+   @Embedded val data: Student,
+   @Relation(
+       parentColumn = "student_id",
+       entityColumn = "subject_id",
+       associateBy = Junction(
+           Subject_Student::class
+       )
+   )
+   val subjects: MutableList<Subject>
+)
+```
+
+This new class has the `@Embedded` annotation indicating it includes the Student class information defined above. It also has the annotation `@Relation` on the `subjects` property. This annotation indicates that the list should be populated using the `Subject_Student` class/relationship. In addition, it also indicates which properties provide the link between the tables:
+
+```kotlin
+   parentColumn = "student_id",
+   entityColumn = "subject_id",
+```
+
+Now in the student DAO we add the method:
+
+```kotlin
+@Transaction
+@Query("SELECT * FROM Student WHERE student_id = (:student_id)")
+fun loadById(student_id: Int): StudentWithSubjets
+```
+
+The `@Transaction` annotation indicates that Room will need to run multiple queries. You need to run one to upload user data and one to upload your subjects. We can now run:
+
+```kotlin
+var student: StudentWithSubjects = studentDao.loadById(2)
+```
+
+We can see that the list of subjects is filled with the subject `"Math"`.
+
+> ![Result of a complex query.](/images/09/query-data.png){:style="display:block; margin-left:auto; margin-right:auto"}
+> *Result of a complex query.*  
+> Source: Javier Salvador (Original image) License: [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+
+
