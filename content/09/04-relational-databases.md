@@ -211,7 +211,6 @@ The Room library is a code layer that works over SQLite and tries to get the pro
 First, we must add Room to our project in the Gradle file:
 
 1. In the plugins section, we must include the following:
-
 ```gradle
 plugins {
    id 'com.android.application'
@@ -219,9 +218,7 @@ plugins {
    id 'kotlin-kapt'
 }
 ```
-
 2. In the dependencies section we must add at least the following:
-
 ```gradle
 dependencies {
    implementation "androidx.room:room-ktx:2.4.1"
