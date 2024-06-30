@@ -84,7 +84,7 @@ In the `manifest.xml` file we must create a service that will be responsible for
    android:name=".MyFirebaseMessagingService"
    android:exported="false">
    <tent-filter>
-       <action android:name="com.google.Firebase.MESSAGING_EVENT" />
+       <action android:name="com.google.firebase.MESSAGING_EVENT" />
    </intent-filter>
 </service>
 ```
@@ -94,7 +94,7 @@ We declare this class in our code:
 ```kotlin
 class MyFirebaseMessagingService  : FirebaseMessagingService() {
     override fun onNewToken(token: String) {
-        Log.d(TAG, "Refreshed token: $token")
+        Log.d("Messages", "Refreshed token: $token")
 
 	}
 
@@ -109,7 +109,7 @@ In the `onCreate` callback of our main `Activity` we use the singleton instance 
 ```kotlin
 FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
    if (!task.isSuccessful) {
-       Log.w(TAG, "Fetching FCM registration token failed", task.exception)
+       Log.w("Messages", "Fetching FCM registration token failed", task.exception)
        return@OnCompleteListener
    }
 
