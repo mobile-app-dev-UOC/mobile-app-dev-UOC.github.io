@@ -95,7 +95,7 @@ We declare this class in our code:
 class MyFirebaseMessagingService  : FirebaseMessagingService() {
     override fun onNewToken(token: String) {
         Log.d(TAG, "Refreshed token: $token")
-        sendRegistrationToServer(token)
+
 	}
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
